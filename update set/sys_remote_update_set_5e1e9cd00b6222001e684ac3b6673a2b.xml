@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<unload unload_date="2016-10-14 09:02:37">
+<unload unload_date="2016-10-14 13:18:30">
 <sys_remote_update_set action="INSERT_OR_UPDATE">
 <application display_value="Global">global</application>
 <application_name>Global</application_name>
@@ -13,42 +13,20 @@
 <name>Better UI</name>
 <origin_sys_id/>
 <release_date/>
-<remote_sys_id>508323080b2222001e684ac3b6673ab9</remote_sys_id>
+<remote_sys_id>b3fd1cd00b6222001e684ac3b6673aba</remote_sys_id>
 <state>loaded</state>
 <summary/>
 <sys_class_name>sys_remote_update_set</sys_class_name>
 <sys_created_by>admin</sys_created_by>
-<sys_created_on>2016-10-14 09:02:37</sys_created_on>
-<sys_id>c68323080b2222001e684ac3b6673abc</sys_id>
+<sys_created_on>2016-10-14 13:18:30</sys_created_on>
+<sys_id>5e1e9cd00b6222001e684ac3b6673a2b</sys_id>
 <sys_mod_count>0</sys_mod_count>
 <sys_updated_by>admin</sys_updated_by>
-<sys_updated_on>2016-10-14 09:02:37</sys_updated_on>
+<sys_updated_on>2016-10-14 13:18:30</sys_updated_on>
 <update_set display_value=""/>
 <update_source display_value=""/>
 <updated/>
 </sys_remote_update_set>
-<sys_update_xml action="INSERT_OR_UPDATE">
-<action>INSERT_OR_UPDATE</action>
-<application display_value="Better UI">2eb1d2b30b1222001e684ac3b6673a72</application>
-<category>customer</category>
-<comments/>
-<name>sys_app_2eb1d2b30b1222001e684ac3b6673a72</name>
-<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_app"><sys_app action="INSERT_OR_UPDATE"><active>true</active><enforce_license>log</enforce_license><js_level>helsinki_es5</js_level><licensable>true</licensable><license_model>none</license_model><logo/><menu/><name>Better UI</name><private>false</private><restrict_table_access>false</restrict_table_access><runtime_access_tracking>permissive</runtime_access_tracking><scope>global</scope><scoped_administration>false</scoped_administration><short_description/><source>2eb1d2b30b1222001e684ac3b6673a72</source><store_correlation_id/><store_url/><sys_class_name>sys_app</sys_class_name><sys_code/><sys_created_by>admin</sys_created_by><sys_created_on>2016-10-13 08:26:44</sys_created_on><sys_id>2eb1d2b30b1222001e684ac3b6673a72</sys_id><sys_mod_count>0</sys_mod_count><sys_updated_by>admin</sys_updated_by><sys_updated_on>2016-10-13 08:26:44</sys_updated_on><template/><trackable>true</trackable><user_role/><vendor/><vendor_prefix/><version>1.0.0</version></sys_app></record_update>]]></payload>
-<remote_update_set display_value="Better UI">c68323080b2222001e684ac3b6673abc</remote_update_set>
-<replace_on_upgrade>false</replace_on_upgrade>
-<sys_created_by>admin</sys_created_by>
-<sys_created_on>2016-10-14 09:02:37</sys_created_on>
-<sys_id>068323080b2222001e684ac3b6673abd</sys_id>
-<sys_mod_count>0</sys_mod_count>
-<sys_updated_by>admin</sys_updated_by>
-<sys_updated_on>2016-10-14 09:02:37</sys_updated_on>
-<table/>
-<target_name>Better UI</target_name>
-<type>Custom Application</type>
-<update_domain>global</update_domain>
-<update_set display_value=""/>
-<view/>
-</sys_update_xml>
 <sys_update_xml action="INSERT_OR_UPDATE">
 <action>INSERT_OR_UPDATE</action>
 <application display_value="Better UI">2eb1d2b30b1222001e684ac3b6673a72</application>
@@ -230,14 +208,14 @@ div.banner_text {
 #better_avatar .dropdown-menu a {
 	padding-left: 10px;
 }</style><sys_class_name>content_css</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2016-09-20 08:46:28</sys_created_on><sys_customer_update>false</sys_customer_update><sys_id>65a937500b4222001e684ac3b6673aec</sys_id><sys_mod_count>35</sys_mod_count><sys_name>better_nav</sys_name><sys_package display_value="Global" source="global">global</sys_package><sys_policy/><sys_replace_on_upgrade>false</sys_replace_on_upgrade><sys_scope display_value="Better UI">2eb1d2b30b1222001e684ac3b6673a72</sys_scope><sys_update_name>content_css_65a937500b4222001e684ac3b6673aec</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2016-10-13 08:27:41</sys_updated_on><type>local</type><url/></content_css></record_update>]]></payload>
-<remote_update_set display_value="Better UI">c68323080b2222001e684ac3b6673abc</remote_update_set>
+<remote_update_set display_value="Better UI">5e1e9cd00b6222001e684ac3b6673a2b</remote_update_set>
 <replace_on_upgrade>false</replace_on_upgrade>
 <sys_created_by>admin</sys_created_by>
-<sys_created_on>2016-10-14 09:02:37</sys_created_on>
-<sys_id>428323080b2222001e684ac3b6673abd</sys_id>
+<sys_created_on>2016-10-14 13:18:30</sys_created_on>
+<sys_id>121e9cd00b6222001e684ac3b6673a2c</sys_id>
 <sys_mod_count>0</sys_mod_count>
 <sys_updated_by>admin</sys_updated_by>
-<sys_updated_on>2016-10-14 09:02:37</sys_updated_on>
+<sys_updated_on>2016-10-14 13:18:30</sys_updated_on>
 <table/>
 <target_name>better_nav</target_name>
 <type>Style Sheet</type>
@@ -445,14 +423,14 @@ div.banner_text {
 		&lt;/body&gt;
 	&lt;/html&gt;
 &lt;/j:jelly&gt;]]&gt;&lt;/html&gt;&lt;name&gt;better&lt;/name&gt;&lt;processing_script/&gt;&lt;sys_class_name&gt;sys_ui_page&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2016-09-20 08:42:37&lt;/sys_created_on&gt;&lt;sys_customer_update&gt;false&lt;/sys_customer_update&gt;&lt;sys_id&gt;d8c87f100b4222001e684ac3b6673a3f&lt;/sys_id&gt;&lt;sys_mod_count&gt;35&lt;/sys_mod_count&gt;&lt;sys_name&gt;better&lt;/sys_name&gt;&lt;sys_package display_value="Global" source="global"&gt;global&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_replace_on_upgrade&gt;false&lt;/sys_replace_on_upgrade&gt;&lt;sys_scope display_value="Better UI"&gt;2eb1d2b30b1222001e684ac3b6673a72&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_ui_page_d8c87f100b4222001e684ac3b6673a3f&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2016-10-14 08:42:25&lt;/sys_updated_on&gt;&lt;/sys_ui_page&gt;&lt;/record_update&gt;</payload>
-<remote_update_set display_value="Better UI">c68323080b2222001e684ac3b6673abc</remote_update_set>
+<remote_update_set display_value="Better UI">5e1e9cd00b6222001e684ac3b6673a2b</remote_update_set>
 <replace_on_upgrade>false</replace_on_upgrade>
 <sys_created_by>admin</sys_created_by>
-<sys_created_on>2016-10-14 09:02:37</sys_created_on>
-<sys_id>4e8323080b2222001e684ac3b6673abd</sys_id>
+<sys_created_on>2016-10-14 13:18:30</sys_created_on>
+<sys_id>1e1e9cd00b6222001e684ac3b6673a2c</sys_id>
 <sys_mod_count>0</sys_mod_count>
 <sys_updated_by>admin</sys_updated_by>
-<sys_updated_on>2016-10-14 09:02:37</sys_updated_on>
+<sys_updated_on>2016-10-14 13:18:30</sys_updated_on>
 <table/>
 <target_name>better</target_name>
 <type>UI Page</type>
@@ -466,7 +444,7 @@ div.banner_text {
 <category>customer</category>
 <comments/>
 <name>sys_ui_macro_cbf873500b4222001e684ac3b6673a93</name>
-<payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sys_ui_macro"&gt;&lt;sys_ui_macro action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;category&gt;general&lt;/category&gt;&lt;description/&gt;&lt;media_type/&gt;&lt;name&gt;better_navigator&lt;/name&gt;&lt;scoped_name/&gt;&lt;sys_class_name&gt;sys_ui_macro&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2016-09-20 08:43:50&lt;/sys_created_on&gt;&lt;sys_customer_update&gt;false&lt;/sys_customer_update&gt;&lt;sys_id&gt;cbf873500b4222001e684ac3b6673a93&lt;/sys_id&gt;&lt;sys_mod_count&gt;237&lt;/sys_mod_count&gt;&lt;sys_name&gt;better_navigator&lt;/sys_name&gt;&lt;sys_package display_value="Global" source="global"&gt;global&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_replace_on_upgrade&gt;false&lt;/sys_replace_on_upgrade&gt;&lt;sys_scope display_value="Better UI"&gt;2eb1d2b30b1222001e684ac3b6673a72&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_ui_macro_cbf873500b4222001e684ac3b6673a93&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2016-10-13 08:49:48&lt;/sys_updated_on&gt;&lt;xml&gt;&lt;![CDATA[&lt;?xml version="1.0" encoding="utf-8" ?&gt;
+<payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sys_ui_macro"&gt;&lt;sys_ui_macro action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;category&gt;general&lt;/category&gt;&lt;description/&gt;&lt;media_type/&gt;&lt;name&gt;better_navigator&lt;/name&gt;&lt;scoped_name/&gt;&lt;sys_class_name&gt;sys_ui_macro&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2016-09-20 08:43:50&lt;/sys_created_on&gt;&lt;sys_customer_update&gt;true&lt;/sys_customer_update&gt;&lt;sys_id&gt;cbf873500b4222001e684ac3b6673a93&lt;/sys_id&gt;&lt;sys_mod_count&gt;240&lt;/sys_mod_count&gt;&lt;sys_name&gt;better_navigator&lt;/sys_name&gt;&lt;sys_package display_value="Global" source="global"&gt;global&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_replace_on_upgrade&gt;false&lt;/sys_replace_on_upgrade&gt;&lt;sys_scope display_value="Better UI"&gt;2eb1d2b30b1222001e684ac3b6673a72&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_ui_macro_cbf873500b4222001e684ac3b6673a93&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;aat.rutten@snc&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2016-10-14 13:14:17&lt;/sys_updated_on&gt;&lt;xml&gt;&lt;![CDATA[&lt;?xml version="1.0" encoding="utf-8" ?&gt;
 &lt;j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null"&gt;
 	&lt;div id="better_nav"&gt;
 		&lt;div id="better_apps_btn" class="navpage-header-content better_nav_btn"&gt;
@@ -507,11 +485,16 @@ div.banner_text {
 			var t = appNode.position().top;
 			appNode.find("ul").css("top", t + "px");
 		}
+		
+		var instanceUrl = 'http://localhost:8080';
+		
+		if (window.location.hostname.indexOf('localhost') == -1)
+			instanceUrl = 'https://' + window.location.hostname;
 	&lt;/script&gt;
 	&lt;!-- build applications and modules --&gt;
 	&lt;script&gt;
 		var apps = [];
-		$j.get("http://localhost:8080/api/now/ui/navigator", function( data ) {
+		$j.get(instanceUrl + "/api/now/ui/navigator", function( data ) {
 			function sortByTitle(a, b) {
 				if(a.title ${AMP}lt; b.title) return -1;
 				if(a.title ${AMP}gt; b.title) return 1;
@@ -585,7 +568,7 @@ div.banner_text {
 	&lt;/script&gt;
 	&lt;!-- build favorites --&gt;
 	&lt;script&gt;
-		$j.get("http://localhost:8080/api/now/ui/favorite", function( data ) {
+		$j.get(instanceUrl + "/api/now/ui/favorite", function( data ) {
 			var favs = data.result.list;
 
 			for (var i in favs) {
@@ -621,7 +604,7 @@ div.banner_text {
 	&lt;/script&gt;
 	&lt;!-- build history --&gt;
 	&lt;script&gt;
-		$j.get("http://localhost:8080/api/now/ui/history", function( data ) {
+		$j.get(instanceUrl + "/api/now/ui/history", function( data ) {
 			var history = data.result.list;
 
 			for (var i in history) {
@@ -740,14 +723,14 @@ div.banner_text {
 	&lt;/script&gt;
 &lt;/j:jelly&gt;
 ]]&gt;&lt;/xml&gt;&lt;/sys_ui_macro&gt;&lt;/record_update&gt;</payload>
-<remote_update_set display_value="Better UI">c68323080b2222001e684ac3b6673abc</remote_update_set>
+<remote_update_set display_value="Better UI">5e1e9cd00b6222001e684ac3b6673a2b</remote_update_set>
 <replace_on_upgrade>false</replace_on_upgrade>
 <sys_created_by>admin</sys_created_by>
-<sys_created_on>2016-10-14 09:02:37</sys_created_on>
-<sys_id>8a8323080b2222001e684ac3b6673abd</sys_id>
+<sys_created_on>2016-10-14 13:18:30</sys_created_on>
+<sys_id>5a1e9cd00b6222001e684ac3b6673a2c</sys_id>
 <sys_mod_count>0</sys_mod_count>
 <sys_updated_by>admin</sys_updated_by>
-<sys_updated_on>2016-10-14 09:02:37</sys_updated_on>
+<sys_updated_on>2016-10-14 13:18:30</sys_updated_on>
 <table/>
 <target_name>better_navigator</target_name>
 <type>Macro</type>
@@ -1173,17 +1156,39 @@ div.banner_text {
 	&lt;/j2:if&gt; --&gt;
 &lt;/j:jelly&gt;
 ]]&gt;&lt;/xml&gt;&lt;/sys_ui_macro&gt;&lt;/record_update&gt;</payload>
-<remote_update_set display_value="Better UI">c68323080b2222001e684ac3b6673abc</remote_update_set>
+<remote_update_set display_value="Better UI">5e1e9cd00b6222001e684ac3b6673a2b</remote_update_set>
 <replace_on_upgrade>false</replace_on_upgrade>
 <sys_created_by>admin</sys_created_by>
-<sys_created_on>2016-10-14 09:02:37</sys_created_on>
-<sys_id>c68323080b2222001e684ac3b6673abd</sys_id>
+<sys_created_on>2016-10-14 13:18:30</sys_created_on>
+<sys_id>961e9cd00b6222001e684ac3b6673a2c</sys_id>
 <sys_mod_count>0</sys_mod_count>
 <sys_updated_by>admin</sys_updated_by>
-<sys_updated_on>2016-10-14 09:02:37</sys_updated_on>
+<sys_updated_on>2016-10-14 13:18:30</sys_updated_on>
 <table/>
 <target_name>better_header</target_name>
 <type>Macro</type>
+<update_domain>global</update_domain>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Better UI">2eb1d2b30b1222001e684ac3b6673a72</application>
+<category>customer</category>
+<comments/>
+<name>sys_app_2eb1d2b30b1222001e684ac3b6673a72</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_app"><sys_app action="INSERT_OR_UPDATE"><active>true</active><enforce_license>log</enforce_license><js_level>helsinki_es5</js_level><licensable>true</licensable><license_model>none</license_model><logo/><menu/><name>Better UI</name><private>false</private><restrict_table_access>false</restrict_table_access><runtime_access_tracking>permissive</runtime_access_tracking><scope>global</scope><scoped_administration>false</scoped_administration><short_description/><source>2eb1d2b30b1222001e684ac3b6673a72</source><store_correlation_id/><store_url/><sys_class_name>sys_app</sys_class_name><sys_code/><sys_created_by>admin</sys_created_by><sys_created_on>2016-10-13 08:26:44</sys_created_on><sys_id>2eb1d2b30b1222001e684ac3b6673a72</sys_id><sys_mod_count>1</sys_mod_count><sys_updated_by>admin</sys_updated_by><sys_updated_on>2016-10-14 13:10:03</sys_updated_on><template/><trackable>true</trackable><user_role/><vendor/><vendor_prefix/><version>1.0.1</version></sys_app></record_update>]]></payload>
+<remote_update_set display_value="Better UI">5e1e9cd00b6222001e684ac3b6673a2b</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2016-10-14 13:18:30</sys_created_on>
+<sys_id>d21e9cd00b6222001e684ac3b6673a2c</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2016-10-14 13:18:30</sys_updated_on>
+<table/>
+<target_name>Better UI</target_name>
+<type>Custom Application</type>
 <update_domain>global</update_domain>
 <update_set display_value=""/>
 <view/>

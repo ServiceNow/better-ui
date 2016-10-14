@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<unload unload_date="2016-10-14 09:00:29">
+<unload unload_date="2016-10-14 13:14:46">
 <sys_ui_macro action="INSERT_OR_UPDATE">
 <active>true</active>
 <category>general</category>
@@ -10,17 +10,17 @@
 <sys_class_name>sys_ui_macro</sys_class_name>
 <sys_created_by>admin</sys_created_by>
 <sys_created_on>2016-09-20 08:43:50</sys_created_on>
-<sys_customer_update>false</sys_customer_update>
+<sys_customer_update>true</sys_customer_update>
 <sys_id>cbf873500b4222001e684ac3b6673a93</sys_id>
-<sys_mod_count>237</sys_mod_count>
+<sys_mod_count>240</sys_mod_count>
 <sys_name>better_navigator</sys_name>
 <sys_package display_value="Global">global</sys_package>
 <sys_policy/>
 <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
 <sys_scope display_value="Better UI">2eb1d2b30b1222001e684ac3b6673a72</sys_scope>
 <sys_update_name>sys_ui_macro_cbf873500b4222001e684ac3b6673a93</sys_update_name>
-<sys_updated_by>admin</sys_updated_by>
-<sys_updated_on>2016-10-13 08:49:48</sys_updated_on>
+<sys_updated_by>aat.rutten@snc</sys_updated_by>
+<sys_updated_on>2016-10-14 13:14:17</sys_updated_on>
 <xml><![CDATA[<?xml version="1.0" encoding="utf-8" ?>
 <j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
 	<div id="better_nav">
@@ -62,11 +62,16 @@
 			var t = appNode.position().top;
 			appNode.find("ul").css("top", t + "px");
 		}
+		
+		var instanceUrl = 'http://localhost:8080';
+		
+		if (window.location.hostname.indexOf('localhost') == -1)
+			instanceUrl = 'https://' + window.location.hostname;
 	</script>
 	<!-- build applications and modules -->
 	<script>
 		var apps = [];
-		$j.get("http://localhost:8080/api/now/ui/navigator", function( data ) {
+		$j.get(instanceUrl + "/api/now/ui/navigator", function( data ) {
 			function sortByTitle(a, b) {
 				if(a.title ${AMP}lt; b.title) return -1;
 				if(a.title ${AMP}gt; b.title) return 1;
@@ -140,7 +145,7 @@
 	</script>
 	<!-- build favorites -->
 	<script>
-		$j.get("http://localhost:8080/api/now/ui/favorite", function( data ) {
+		$j.get(instanceUrl + "/api/now/ui/favorite", function( data ) {
 			var favs = data.result.list;
 
 			for (var i in favs) {
@@ -176,7 +181,7 @@
 	</script>
 	<!-- build history -->
 	<script>
-		$j.get("http://localhost:8080/api/now/ui/history", function( data ) {
+		$j.get(instanceUrl + "/api/now/ui/history", function( data ) {
 			var history = data.result.list;
 
 			for (var i in history) {
