@@ -9,12 +9,11 @@ If you work a lot in the ServiceNow platform using forms and lists then this is 
 - No seperators
 - No duplicates in history
 
+![Image of Homepage](./images/home.png)
 
-![Image of Homepage]('images/home.png')
+![Image of Application Menu](./images/app-menu.png)
 
-![Image of Application Menu]('images/app-menu.png')
-
-![Image of User Profile Menu]('images/profile-menu.png')
+![Image of User Profile Menu](./images/profile-menu.png)
 
 ## Installation
 ### Update Set Method:
@@ -48,4 +47,4 @@ Navigate to localhost:8080/better.do
 ## Known Bugs
 - Incorrect style applied to close button on impersonate dialog
 
-![Image of Impersonate Dialog]('images/button.png')
+![Image of Impersonate Dialog](./images/button.png)
