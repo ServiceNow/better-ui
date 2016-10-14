@@ -34,6 +34,10 @@ If you work a lot in the ServiceNow platform using forms and lists then this is 
 ## Usage
 Navigate to localhost:8080/better.do
 
+OR
+
+Navigate to YOUR-INSTANCE-NAME.service-now.com/better.do
+
 ## Known Limitations
 - Not tested
 - No RTL support
