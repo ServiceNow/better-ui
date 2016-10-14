@@ -37,6 +37,7 @@ Navigate to localhost:8080/better.do
 ## Known Limitations
 - Not tested
 - No RTL support
+- No routing via URL parameters
 - Does not responsd to ServiceNow themes
 - No application picker or update set picker
 - Profile avatar doesnt display
