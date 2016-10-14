@@ -1,7 +1,6 @@
 #ServiceNow Better UI
----
 
-If you work a lot in the ServiceNow platform using forms and lists then this is for you. ServiceNow Developer UI brings back the full width of your screen.
+If you work a lot with big forms and lists in ServiceNow then this might be something for you.
 
 ## Features
 - Full screen width
