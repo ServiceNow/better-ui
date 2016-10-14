@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<unload unload_date="2016-10-12 13:36:39">
+<content_css action="INSERT_OR_UPDATE">
+<name>better_nav</name>
+<style>#better_ui_container {
+	left: 0px;
+}
+
+#better_nav ul {
+	max-height: 400px;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+#better_nav,
+#better_apps_btn,
+#better_favs_btn,
+#better_hist_btn {
+	z-index: 3;
+	position: relative;
+	display: inline-block;
+	margin: 0px;
+}
+
+#better_apps_btn {
+	float: left;
+}
+
+#better_logo {
+	padding-top: 5px;
+}
+
+.better_nav_btn {
+	top: -1px;
+}
+
+#better_nav .icon-application-generic,
+#better_nav .icon-star,
+#better_nav .icon-history {
+	font-size: 18px;
+	background-color: #303A46;
+	color: white;
+	padding: 12px;
+	cursor: pointer;
+}
+
+#better_nav .icon-application-generic:hover,
+#better_nav .icon-star:hover,
+#better_nav .icon-history:hover {
+	background-color: #485563;
+}
+
+#better_apps_btn:hover + #better_app_tree,
+#better_app_tree:hover,
+#better_favs_btn:hover + #better_favs,
+#better_favs:hover,
+#better_hist_btn:hover + #better_hist,
+#better_hist:hover {
+	display: block;
+	position: absolute;
+	z-index: 4;
+	top: 95%;
+	padding-top: 5px;
+}
+
+#better_app_tree {
+	width: 150%;
+}
+
+#better_favs {
+	left: 33%;
+	width: 150%;
+}
+
+#better_hist {
+	left: 67%;
+	width: 150%;
+}
+
+#better_app_tree,
+.better_module_list,
+#better_favs,
+#better_hist {
+	display: none;
+	background-color: #485563;
+	padding: 0;
+}
+
+#better_app_list,
+.better_module_list,
+#better_favs_list,
+#better_hist_list,
+.better_module_list li span a {
+	list-style-type: none;
+	color: white;
+	padding: 0px;
+	text-decoration: none;
+}
+
+.better_module_list li span a {
+	display: block;
+	width: 100%;
+}
+
+.better_module_list {
+	width: 120%;
+}
+
+#better_app_list li span,
+#better_favs_list li span a,
+#better_hist_list li span a {
+	display: inline-block;
+	width: 100%;
+	padding: 6px 12px;
+	cursor: pointer;
+	white-space: nowrap;
+	text-decoration: none;
+	color: white;
+}
+
+
+#better_app_list li:hover &gt; span,
+#better_app_list li span:hover &gt; a,
+#better_favs_list li span:hover &gt; a,
+#better_hist_list li span:hover &gt; a {
+	background-color: #303A46;
+}
+
+#better_app_list,
+#better_favs_list,
+#better_hist_list {
+	margin-bottom: 0px;
+}
+
+.app_node:hover &gt; .better_module_list {
+	display: inline-block;
+	position: absolute;
+}
+
+div.banner_text {
+	display: none;
+}
+
+#better_avatar {
+	position: absolute;
+	top: 12px;
+	right: 12px;
+	cursor: pointer;
+}
+
+#better_search {
+	position: absolute;
+	top: 15px;
+	right: 50px;
+}
+
+/*
+#better_search span.icon-search:hover {
+	color: white;
+	background-color: transparent;
+}*/
+
+#app_search {
+	border-radius: 25px;
+	background: white;
+	border: none;
+	width: 95%;
+	margin: auto;
+}
+
+#better_avatar .dropdown-menu span {
+	color: #303A46;
+	padding-right: 5px;
+}
+
+
+#better_avatar .dropdown-menu a {
+	padding-left: 10px;
+}</style>
+<sys_class_name>content_css</sys_class_name>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2016-09-20 08:46:28</sys_created_on>
+<sys_customer_update>false</sys_customer_update>
+<sys_id>65a937500b4222001e684ac3b6673aec</sys_id>
+<sys_mod_count>34</sys_mod_count>
+<sys_name>better_nav</sys_name>
+<sys_package display_value="Global">global</sys_package>
+<sys_policy/>
+<sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+<sys_scope display_value="Global">global</sys_scope>
+<sys_update_name>content_css_65a937500b4222001e684ac3b6673aec</sys_update_name>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2016-10-12 13:35:32</sys_updated_on>
+<type>local</type>
+<url/>
+</content_css>
+</unload>

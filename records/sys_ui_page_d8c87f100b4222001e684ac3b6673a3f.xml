@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<unload unload_date="2016-10-14 09:00:39">
+<sys_ui_page action="INSERT_OR_UPDATE">
+<category>general</category>
+<client_script/>
+<description/>
+<direct>false</direct>
+<endpoint/>
+<html><![CDATA[<?xml version="1.0" encoding="utf-8" ?>
+<!-- the main page -->
+<j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
+	<g2:doctype name="html" />
+	<g:inline template="html_page_properties.xml" />
+	<html dir="${jvar_text_direction}" class="${jvar_text_direction}" data-doctype="true" >
+		<head>
+			<g:inline template="html_page_title.xml" />
+			<g:inline template="html_page_meta.xml" />
+			<link href="${gs.getEscapedProperty('glide.product.icon', 'favicon.ico')}" rel="shortcut icon" />
+			<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=no" /> <!-- For mobile devices -->
+
+			<!-- style sheets -->
+			<g:inline template="heisenberg_output.xml" type="css"/>
+			<g2:requires name="styles/css_includes_magellan.css" includes="true" params="c=$[gs.getProperty('css.version')]_$[GlideCacheManager.getFlushStamp('csscsscsscache')]&amp;theme=$[gs.getPreference('glide.css.theme.ui16')]" />
+			<g:requires name="styles/navpage/navpage.css" params="c=$[gs.getProperty('css.version')]_$[GlideCacheManager.getFlushStamp('csscsscsscache')]&amp;theme=$[gs.getPreference('glide.css.theme.ui16')]"/>
+			<g:requires name="styles/overview_help.css" params="c=$[gs.getProperty('css.version')]_$[GlideCacheManager.getFlushStamp('csscsscsscache')]&amp;theme=$[gs.getPreference('glide.css.theme.ui16')]"/>
+			<g:requires name="styles/sn_notification.css" params="theme=$[gs.getPreference('glide.css.theme.ui16')]"/>
+			<g:requires name="styles/sn_avatar.css" params="c=$[gs.getProperty('css.version')]_$[GlideCacheManager.getFlushStamp('csscsscsscache')]&amp;theme=$[gs.getPreference('glide.css.theme.ui16')]"/>
+			<g:requires name="styles/dist/common/sn_common.css" params="theme=$[gs.getPreference('glide.css.theme.ui16')]"/>
+			<link href="65a937500b4222001e684ac3b6673aec.cssdbx?" type="text/css" rel="stylesheet" />
+
+			<j2:if test="$[GlideUtil.isExpressInstance()]">
+				<g:requires name="styles/sn_express.css" params="c=$[gs.getProperty('css.version')]_$[GlideCacheManager.getFlushStamp('csscsscsscache')]"/>
+            </j2:if>
+
+			<!-- script -->
+			<g:inline template="html_page_script_globals.xml" />
+			<g:inline template="html_page_header.xml" />
+
+			<g:requires name="scripts/lib/jquery2_includes.js"/>
+			<g:requires name="scripts/doctype/CustomEventManager.js"/>
+			<g:requires name="scripts/heisenberg/heisenberg_all.js" includes="true"/>
+			<g:requires name="scripts/angular_includes_1.4.js"/>
+			<g:inline template="amb_common.xml" />
+			<g2:requires name="scripts/js_includes_ngCommon.js" includes="true"/>
+			<g:requires name="scripts/js_includes_navpage15.js" includes="true"/>
+			
+			<script>
+				// Don't let the navpage intercept links targeted for the main frame.
+				if (window.name == "gsft_main")
+					window.name = "";
+			</script>		
+			<g:no_escape>		
+				<script type="text/javascript">
+					window.top.Magellan = window.top.Magellan || {};
+					window.top.Magellan.globals = window.top.Magellan.globals || {};
+					window.top.Magellan.globals.navColors = ${gs.getProperty("glide.ui.nav.colors", "undefined")};
+					window.top.Magellan.globals.navIcons = ${gs.getProperty("glide.ui.nav.icons", "undefined")};
+					window.top.Magellan.globals.paramBlacklist = ${gs.getProperty("glide.ui.nav.favorite.url.param_blacklist", "undefined")};
+				</script>
+			</g:no_escape>
+			<script type="text/javascript">
+				window.top.Magellan.globals.messages = {
+					add_to_favorites: "${JS,HTML:gs.getMessage('Add to favorites')}",
+					remove_from_favorites: "${JS,HTML:gs.getMessage('Remove from favorites')}",
+					edit_application: "${JS,HTML:gs.getMessage('Edit application')}",
+					edit_module: "${JS,HTML:gs.getMessage('Edit module')}"
+				};
+			</script>
+			
+			<g:requires name="scripts/app.magellan/js_includes_magellan.js" includes="true"/>
+		</head>
+		<body>
+			<!-- Set ability to run chat -->
+			<g2:evaluate var="jvar_connect">
+				GlidePluginManager.isRegistered('com.glide.connect') $[AND] gs.getProperty("collaboration.frameset", false) === 'true' $[AND] GlideCollaborationCompatibility.getCompatibility() == "ALLOW"
+			</g2:evaluate>
+			<g2:evaluate var="jvar_embedded_help">
+				GlidePluginManager.isRegistered('com.glide.embedded_help') $[AND] gs.hasRole('admin') $[AND] !GlideCollaborationCompatibility.isIncompatible();
+			</g2:evaluate>
+			<g:evaluate var="jvar_openframe">
+				GlidePluginManager.isRegistered('com.sn_openframe') ${AND} gs.hasRole('sn_openframe_user')
+			</g:evaluate>
+			<g2:evaluate var="jvar_right_pane_class" jelly="true">
+				var theClass = "";
+				if (jelly.jvar_connect == 'false')
+					theClass = "navpage-right-hidden";
+				else if (jelly.jvar_connect == 'true' $[AND] gs.getUser().getPreference('collab.frame.right.collapsed') !== 'false')
+					theClass = " ";
+
+				theClass;
+			</g2:evaluate>
+
+			<!-- since 99% of instances do not have apps in the navigator for guest users, hide the nav by default for guest, show it for authed users -->
+			<g2:set_if var="jvar_nav_class" test="$[gs.isLoggedIn()]"
+					   true="" false="navpage-nav-hidden"/>
+
+			<!-- container for the whole page -->
+			<div class="navpage-layout $[jvar_right_pane_class] $[jvar_nav_class] navpage-right-hidden navpage-bottom-hidden small-height">
+
+				<!-- banner area -->
+				<header class="navpage-header" role="banner">
+					<g:inline template="better_header.xml"/>
+				</header>
+
+				<!-- <nav class="navpage-nav" aria-label="${gs.getMessage('Applications')}">
+					<g:inline template="magellan_navigator.xml" />
+				</nav> -->
+
+				<!-- main panel -->
+				<main id="better_ui_container" class="navpage-main" aria-label="${gs.getMessage('Main content')}">
+					<div class="navpage-main-left">
+						<j2:if test="$[sysparm_layout_test == 'true']">
+							<g:inline template="navpage_layout_test.xml"/>
+						</j2:if>
+						<j2:if test="$[empty(sysparm_layout_test)]">
+							<g2:evaluate var="jvar_href" jelly="true">
+								var uri = '$[JS:jvar_session.getLoginHome(true)]';
+								if (jelly.sysparm_uri)
+									uri = jelly.sysparm_uri;
+								uri;
+							</g2:evaluate>
+							<g2:set_if var="jvar_href" test="$[empty(sysparm_test)]" true="$[jvar_href]" false="about:blank" />
+							<iframe id="gsft_main"
+									main-pane="true"
+									name="gsft_main"
+									title="${gs.getMessage('Main Content')}"
+									src="$[jvar_href]" />
+
+							<j2:if test="$[jvar_isMSIE9]">
+								<script type="text/javascript">
+									// Redirect for IE9
+									var hash = window.location.hash;
+									if (hash != '' $[AND] hash.indexOf('#/nav_to.do?uri=') == 0) {
+										var uri = hash.substr(16);
+										uri = decodeURIComponent(uri);
+										if (uri.length > 1){
+											$j('#gsft_main').prop('src', uri);
+										}
+									}
+								</script>
+							</j2:if>
+						</j2:if>
+					</div>
+				</main>
+
+				<!-- right panel (collaboration) -->
+				<j2:if test="$[gs.isLoggedIn()]">
+					<aside class="navpage-right" role="complementary" aria-labelledby="connect-sidebar-title">
+						<h2 id="connect-sidebar-title" class="sr-only">${gs.getMessage('Connect Sidebar')}</h2>
+						<g:inline template="concourse_right.xml"/>
+					</aside>
+				</j2:if>
+
+				<!-- footer panel -->
+				<j2:if test="$[gs.isLoggedIn()]">
+					<aside id="edge_south_debug" class="navpage-bottom"  role="complementary"  aria-labelledby="developer-sidebar-title">
+						<h2 id="developer-sidebar-title" class="sr-only">${gs.getMessage('Developer Sidebar')}</h2>
+						<iframe id="javascript_debugger" class="js-debug"/>
+					</aside>
+				</j2:if>
+			</div>
+
+			<j2:if test="$[gs.isLoggedIn()]">
+				<j2:set var="jvar_should_show_help" value="$[gs.getUser().getPreference('overview_help.visited.ui16') == 'false']"/>
+				<overviewhelp page-name="ui16" active="$[jvar_should_show_help]" embedded="true"/>
+			</j2:if>
+
+			<!-- script includes at end -->
+			<g:requires output="true" />
+			<g2:no_escape>
+				<g2:requires output="true" />
+			</g2:no_escape>
+
+			<script>
+				jQuery(document).ready(function() {
+					// add these modules to the navpage Angular
+					window.NOW = window.NOW || {};
+					window.NOW.ngLoadModules = window.NOW.ngLoadModules || [];
+					NOW.ngLoadModules.push('Magellan', 'sn.concourse', 'sn.overviewhelp');
+				});
+			</script>
+			<!-- Add open frame -->
+			<j:if test="${jvar_openframe}">
+				<g:inline template="openframe.xml" />
+			</j:if>
+			<!-- Guided tours -->
+			<j2:if test="$[jvar_embedded_help]">
+				<g:inline template="guided_tours.xml" />
+				<g2:evaluate var="jvar_is_embedded_help">
+					SNC.EmbeddedHelpUtil.isEmbeddedHelpActive();
+				</g2:evaluate>
+				<script>
+					window.NOW.isEmbeddedHelpActive = $[jvar_is_embedded_help];
+				</script>
+			</j2:if>
+			<g:inline template="ng_translations.xml"/>
+			<g2:inline template="concourse_template_preload.xml"/>
+			<g:inline template="concourse_userpreference_preload.xml"/>
+			<g:requires name="scripts/NavpageAngularBootstrap.js"/>
+		</body>
+	</html>
+</j:jelly>]]></html>
+<name>better</name>
+<processing_script/>
+<sys_class_name>sys_ui_page</sys_class_name>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2016-09-20 08:42:37</sys_created_on>
+<sys_customer_update>false</sys_customer_update>
+<sys_id>d8c87f100b4222001e684ac3b6673a3f</sys_id>
+<sys_mod_count>35</sys_mod_count>
+<sys_name>better</sys_name>
+<sys_package display_value="Global">global</sys_package>
+<sys_policy/>
+<sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+<sys_scope display_value="Better UI">2eb1d2b30b1222001e684ac3b6673a72</sys_scope>
+<sys_update_name>sys_ui_page_d8c87f100b4222001e684ac3b6673a3f</sys_update_name>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2016-10-14 08:42:25</sys_updated_on>
+</sys_ui_page>
+</unload>

@@ -1,0 +1,1191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<unload unload_date="2016-10-14 09:02:37">
+<sys_remote_update_set action="INSERT_OR_UPDATE">
+<application display_value="Global">global</application>
+<application_name>Global</application_name>
+<application_scope>global</application_scope>
+<application_version/>
+<collisions/>
+<commit_date/>
+<deleted/>
+<description> </description>
+<inserted/>
+<name>Better UI</name>
+<origin_sys_id/>
+<release_date/>
+<remote_sys_id>508323080b2222001e684ac3b6673ab9</remote_sys_id>
+<state>loaded</state>
+<summary/>
+<sys_class_name>sys_remote_update_set</sys_class_name>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2016-10-14 09:02:37</sys_created_on>
+<sys_id>c68323080b2222001e684ac3b6673abc</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2016-10-14 09:02:37</sys_updated_on>
+<update_set display_value=""/>
+<update_source display_value=""/>
+<updated/>
+</sys_remote_update_set>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Better UI">2eb1d2b30b1222001e684ac3b6673a72</application>
+<category>customer</category>
+<comments/>
+<name>sys_app_2eb1d2b30b1222001e684ac3b6673a72</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_app"><sys_app action="INSERT_OR_UPDATE"><active>true</active><enforce_license>log</enforce_license><js_level>helsinki_es5</js_level><licensable>true</licensable><license_model>none</license_model><logo/><menu/><name>Better UI</name><private>false</private><restrict_table_access>false</restrict_table_access><runtime_access_tracking>permissive</runtime_access_tracking><scope>global</scope><scoped_administration>false</scoped_administration><short_description/><source>2eb1d2b30b1222001e684ac3b6673a72</source><store_correlation_id/><store_url/><sys_class_name>sys_app</sys_class_name><sys_code/><sys_created_by>admin</sys_created_by><sys_created_on>2016-10-13 08:26:44</sys_created_on><sys_id>2eb1d2b30b1222001e684ac3b6673a72</sys_id><sys_mod_count>0</sys_mod_count><sys_updated_by>admin</sys_updated_by><sys_updated_on>2016-10-13 08:26:44</sys_updated_on><template/><trackable>true</trackable><user_role/><vendor/><vendor_prefix/><version>1.0.0</version></sys_app></record_update>]]></payload>
+<remote_update_set display_value="Better UI">c68323080b2222001e684ac3b6673abc</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2016-10-14 09:02:37</sys_created_on>
+<sys_id>068323080b2222001e684ac3b6673abd</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2016-10-14 09:02:37</sys_updated_on>
+<table/>
+<target_name>Better UI</target_name>
+<type>Custom Application</type>
+<update_domain>global</update_domain>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Better UI">2eb1d2b30b1222001e684ac3b6673a72</application>
+<category>customer</category>
+<comments/>
+<name>content_css_65a937500b4222001e684ac3b6673aec</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="content_css"><content_css action="INSERT_OR_UPDATE"><name>better_nav</name><style>#better_ui_container {
+	left: 0px;
+}
+
+#better_nav ul {
+	max-height: 400px;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+#better_nav,
+#better_apps_btn,
+#better_favs_btn,
+#better_hist_btn {
+	z-index: 3;
+	position: relative;
+	display: inline-block;
+	margin: 0px;
+}
+
+#better_apps_btn {
+	float: left;
+}
+
+#better_logo {
+	padding-top: 5px;
+}
+
+.better_nav_btn {
+	top: -1px;
+}
+
+#better_nav .icon-application-generic,
+#better_nav .icon-star,
+#better_nav .icon-history {
+	font-size: 18px;
+	background-color: #303A46;
+	color: white;
+	padding: 12px;
+	cursor: pointer;
+}
+
+#better_nav .icon-application-generic:hover,
+#better_nav .icon-star:hover,
+#better_nav .icon-history:hover {
+	background-color: #485563;
+}
+
+#better_apps_btn:hover + #better_app_tree,
+#better_app_tree:hover,
+#better_favs_btn:hover + #better_favs,
+#better_favs:hover,
+#better_hist_btn:hover + #better_hist,
+#better_hist:hover {
+	display: block;
+	position: absolute;
+	z-index: 4;
+	top: 95%;
+	padding-top: 5px;
+}
+
+#better_app_tree {
+	width: 150%;
+}
+
+#better_favs {
+	left: 33%;
+	width: 150%;
+}
+
+#better_hist {
+	left: 67%;
+	width: 150%;
+}
+
+#better_app_tree,
+.better_module_list,
+#better_favs,
+#better_hist {
+	display: none;
+	background-color: #485563;
+	padding: 0;
+}
+
+#better_app_list,
+.better_module_list,
+#better_favs_list,
+#better_hist_list,
+.better_module_list li span a {
+	list-style-type: none;
+	color: white;
+	padding: 0px;
+	text-decoration: none;
+}
+
+.better_module_list li span a {
+	display: block;
+	width: 100%;
+}
+
+.better_module_list {
+	width: 120%;
+}
+
+#better_app_list li span,
+#better_favs_list li span a,
+#better_hist_list li span a {
+	display: inline-block;
+	width: 100%;
+	padding: 6px 12px;
+	cursor: pointer;
+	white-space: nowrap;
+	text-decoration: none;
+	color: white;
+}
+
+
+#better_app_list li:hover &gt; span,
+#better_app_list li span:hover &gt; a,
+#better_favs_list li span:hover &gt; a,
+#better_hist_list li span:hover &gt; a {
+	background-color: #303A46;
+}
+
+#better_app_list,
+#better_favs_list,
+#better_hist_list {
+	margin-bottom: 0px;
+}
+
+.app_node:hover &gt; .better_module_list {
+	display: inline-block;
+	position: absolute;
+}
+
+div.banner_text {
+	display: none;
+}
+
+#better_avatar {
+	position: absolute;
+	top: 12px;
+	right: 12px;
+	cursor: pointer;
+}
+
+#better_search {
+	position: absolute;
+	top: 15px;
+	right: 50px;
+}
+
+/*
+#better_search span.icon-search:hover {
+	color: white;
+	background-color: transparent;
+}*/
+
+#app_search {
+	border-radius: 25px;
+	background: white;
+	border: none;
+	width: 95%;
+	margin: auto;
+}
+
+#better_avatar .dropdown-menu span {
+	color: #303A46;
+	padding-right: 5px;
+}
+
+
+#better_avatar .dropdown-menu a {
+	padding-left: 10px;
+}</style><sys_class_name>content_css</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2016-09-20 08:46:28</sys_created_on><sys_customer_update>false</sys_customer_update><sys_id>65a937500b4222001e684ac3b6673aec</sys_id><sys_mod_count>35</sys_mod_count><sys_name>better_nav</sys_name><sys_package display_value="Global" source="global">global</sys_package><sys_policy/><sys_replace_on_upgrade>false</sys_replace_on_upgrade><sys_scope display_value="Better UI">2eb1d2b30b1222001e684ac3b6673a72</sys_scope><sys_update_name>content_css_65a937500b4222001e684ac3b6673aec</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2016-10-13 08:27:41</sys_updated_on><type>local</type><url/></content_css></record_update>]]></payload>
+<remote_update_set display_value="Better UI">c68323080b2222001e684ac3b6673abc</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2016-10-14 09:02:37</sys_created_on>
+<sys_id>428323080b2222001e684ac3b6673abd</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2016-10-14 09:02:37</sys_updated_on>
+<table/>
+<target_name>better_nav</target_name>
+<type>Style Sheet</type>
+<update_domain>global</update_domain>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Better UI">2eb1d2b30b1222001e684ac3b6673a72</application>
+<category>customer</category>
+<comments/>
+<name>sys_ui_page_d8c87f100b4222001e684ac3b6673a3f</name>
+<payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sys_ui_page"&gt;&lt;sys_ui_page action="INSERT_OR_UPDATE"&gt;&lt;category&gt;general&lt;/category&gt;&lt;client_script/&gt;&lt;description/&gt;&lt;direct&gt;false&lt;/direct&gt;&lt;endpoint/&gt;&lt;html&gt;&lt;![CDATA[&lt;?xml version="1.0" encoding="utf-8" ?&gt;
+&lt;!-- the main page --&gt;
+&lt;j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null"&gt;
+	&lt;g2:doctype name="html" /&gt;
+	&lt;g:inline template="html_page_properties.xml" /&gt;
+	&lt;html dir="${jvar_text_direction}" class="${jvar_text_direction}" data-doctype="true" &gt;
+		&lt;head&gt;
+			&lt;g:inline template="html_page_title.xml" /&gt;
+			&lt;g:inline template="html_page_meta.xml" /&gt;
+			&lt;link href="${gs.getEscapedProperty('glide.product.icon', 'favicon.ico')}" rel="shortcut icon" /&gt;
+			&lt;meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=no" /&gt; &lt;!-- For mobile devices --&gt;
+
+			&lt;!-- style sheets --&gt;
+			&lt;g:inline template="heisenberg_output.xml" type="css"/&gt;
+			&lt;g2:requires name="styles/css_includes_magellan.css" includes="true" params="c=$[gs.getProperty('css.version')]_$[GlideCacheManager.getFlushStamp('csscsscsscache')]&amp;amp;theme=$[gs.getPreference('glide.css.theme.ui16')]" /&gt;
+			&lt;g:requires name="styles/navpage/navpage.css" params="c=$[gs.getProperty('css.version')]_$[GlideCacheManager.getFlushStamp('csscsscsscache')]&amp;amp;theme=$[gs.getPreference('glide.css.theme.ui16')]"/&gt;
+			&lt;g:requires name="styles/overview_help.css" params="c=$[gs.getProperty('css.version')]_$[GlideCacheManager.getFlushStamp('csscsscsscache')]&amp;amp;theme=$[gs.getPreference('glide.css.theme.ui16')]"/&gt;
+			&lt;g:requires name="styles/sn_notification.css" params="theme=$[gs.getPreference('glide.css.theme.ui16')]"/&gt;
+			&lt;g:requires name="styles/sn_avatar.css" params="c=$[gs.getProperty('css.version')]_$[GlideCacheManager.getFlushStamp('csscsscsscache')]&amp;amp;theme=$[gs.getPreference('glide.css.theme.ui16')]"/&gt;
+			&lt;g:requires name="styles/dist/common/sn_common.css" params="theme=$[gs.getPreference('glide.css.theme.ui16')]"/&gt;
+			&lt;link href="65a937500b4222001e684ac3b6673aec.cssdbx?" type="text/css" rel="stylesheet" /&gt;
+
+			&lt;j2:if test="$[GlideUtil.isExpressInstance()]"&gt;
+				&lt;g:requires name="styles/sn_express.css" params="c=$[gs.getProperty('css.version')]_$[GlideCacheManager.getFlushStamp('csscsscsscache')]"/&gt;
+            &lt;/j2:if&gt;
+
+			&lt;!-- script --&gt;
+			&lt;g:inline template="html_page_script_globals.xml" /&gt;
+			&lt;g:inline template="html_page_header.xml" /&gt;
+
+			&lt;g:requires name="scripts/lib/jquery2_includes.js"/&gt;
+			&lt;g:requires name="scripts/doctype/CustomEventManager.js"/&gt;
+			&lt;g:requires name="scripts/heisenberg/heisenberg_all.js" includes="true"/&gt;
+			&lt;g:requires name="scripts/angular_includes_1.4.js"/&gt;
+			&lt;g:inline template="amb_common.xml" /&gt;
+			&lt;g2:requires name="scripts/js_includes_ngCommon.js" includes="true"/&gt;
+			&lt;g:requires name="scripts/js_includes_navpage15.js" includes="true"/&gt;
+			
+			&lt;script&gt;
+				// Don't let the navpage intercept links targeted for the main frame.
+				if (window.name == "gsft_main")
+					window.name = "";
+			&lt;/script&gt;		
+			&lt;g:no_escape&gt;		
+				&lt;script type="text/javascript"&gt;
+					window.top.Magellan = window.top.Magellan || {};
+					window.top.Magellan.globals = window.top.Magellan.globals || {};
+					window.top.Magellan.globals.navColors = ${gs.getProperty("glide.ui.nav.colors", "undefined")};
+					window.top.Magellan.globals.navIcons = ${gs.getProperty("glide.ui.nav.icons", "undefined")};
+					window.top.Magellan.globals.paramBlacklist = ${gs.getProperty("glide.ui.nav.favorite.url.param_blacklist", "undefined")};
+				&lt;/script&gt;
+			&lt;/g:no_escape&gt;
+			&lt;script type="text/javascript"&gt;
+				window.top.Magellan.globals.messages = {
+					add_to_favorites: "${JS,HTML:gs.getMessage('Add to favorites')}",
+					remove_from_favorites: "${JS,HTML:gs.getMessage('Remove from favorites')}",
+					edit_application: "${JS,HTML:gs.getMessage('Edit application')}",
+					edit_module: "${JS,HTML:gs.getMessage('Edit module')}"
+				};
+			&lt;/script&gt;
+			
+			&lt;g:requires name="scripts/app.magellan/js_includes_magellan.js" includes="true"/&gt;
+		&lt;/head&gt;
+		&lt;body&gt;
+			&lt;!-- Set ability to run chat --&gt;
+			&lt;g2:evaluate var="jvar_connect"&gt;
+				GlidePluginManager.isRegistered('com.glide.connect') $[AND] gs.getProperty("collaboration.frameset", false) === 'true' $[AND] GlideCollaborationCompatibility.getCompatibility() == "ALLOW"
+			&lt;/g2:evaluate&gt;
+			&lt;g2:evaluate var="jvar_embedded_help"&gt;
+				GlidePluginManager.isRegistered('com.glide.embedded_help') $[AND] gs.hasRole('admin') $[AND] !GlideCollaborationCompatibility.isIncompatible();
+			&lt;/g2:evaluate&gt;
+			&lt;g:evaluate var="jvar_openframe"&gt;
+				GlidePluginManager.isRegistered('com.sn_openframe') ${AND} gs.hasRole('sn_openframe_user')
+			&lt;/g:evaluate&gt;
+			&lt;g2:evaluate var="jvar_right_pane_class" jelly="true"&gt;
+				var theClass = "";
+				if (jelly.jvar_connect == 'false')
+					theClass = "navpage-right-hidden";
+				else if (jelly.jvar_connect == 'true' $[AND] gs.getUser().getPreference('collab.frame.right.collapsed') !== 'false')
+					theClass = " ";
+
+				theClass;
+			&lt;/g2:evaluate&gt;
+
+			&lt;!-- since 99% of instances do not have apps in the navigator for guest users, hide the nav by default for guest, show it for authed users --&gt;
+			&lt;g2:set_if var="jvar_nav_class" test="$[gs.isLoggedIn()]"
+					   true="" false="navpage-nav-hidden"/&gt;
+
+			&lt;!-- container for the whole page --&gt;
+			&lt;div class="navpage-layout $[jvar_right_pane_class] $[jvar_nav_class] navpage-right-hidden navpage-bottom-hidden small-height"&gt;
+
+				&lt;!-- banner area --&gt;
+				&lt;header class="navpage-header" role="banner"&gt;
+					&lt;g:inline template="better_header.xml"/&gt;
+				&lt;/header&gt;
+
+				&lt;!-- &lt;nav class="navpage-nav" aria-label="${gs.getMessage('Applications')}"&gt;
+					&lt;g:inline template="magellan_navigator.xml" /&gt;
+				&lt;/nav&gt; --&gt;
+
+				&lt;!-- main panel --&gt;
+				&lt;main id="better_ui_container" class="navpage-main" aria-label="${gs.getMessage('Main content')}"&gt;
+					&lt;div class="navpage-main-left"&gt;
+						&lt;j2:if test="$[sysparm_layout_test == 'true']"&gt;
+							&lt;g:inline template="navpage_layout_test.xml"/&gt;
+						&lt;/j2:if&gt;
+						&lt;j2:if test="$[empty(sysparm_layout_test)]"&gt;
+							&lt;g2:evaluate var="jvar_href" jelly="true"&gt;
+								var uri = '$[JS:jvar_session.getLoginHome(true)]';
+								if (jelly.sysparm_uri)
+									uri = jelly.sysparm_uri;
+								uri;
+							&lt;/g2:evaluate&gt;
+							&lt;g2:set_if var="jvar_href" test="$[empty(sysparm_test)]" true="$[jvar_href]" false="about:blank" /&gt;
+							&lt;iframe id="gsft_main"
+									main-pane="true"
+									name="gsft_main"
+									title="${gs.getMessage('Main Content')}"
+									src="$[jvar_href]" /&gt;
+
+							&lt;j2:if test="$[jvar_isMSIE9]"&gt;
+								&lt;script type="text/javascript"&gt;
+									// Redirect for IE9
+									var hash = window.location.hash;
+									if (hash != '' $[AND] hash.indexOf('#/nav_to.do?uri=') == 0) {
+										var uri = hash.substr(16);
+										uri = decodeURIComponent(uri);
+										if (uri.length &gt; 1){
+											$j('#gsft_main').prop('src', uri);
+										}
+									}
+								&lt;/script&gt;
+							&lt;/j2:if&gt;
+						&lt;/j2:if&gt;
+					&lt;/div&gt;
+				&lt;/main&gt;
+
+				&lt;!-- right panel (collaboration) --&gt;
+				&lt;j2:if test="$[gs.isLoggedIn()]"&gt;
+					&lt;aside class="navpage-right" role="complementary" aria-labelledby="connect-sidebar-title"&gt;
+						&lt;h2 id="connect-sidebar-title" class="sr-only"&gt;${gs.getMessage('Connect Sidebar')}&lt;/h2&gt;
+						&lt;g:inline template="concourse_right.xml"/&gt;
+					&lt;/aside&gt;
+				&lt;/j2:if&gt;
+
+				&lt;!-- footer panel --&gt;
+				&lt;j2:if test="$[gs.isLoggedIn()]"&gt;
+					&lt;aside id="edge_south_debug" class="navpage-bottom"  role="complementary"  aria-labelledby="developer-sidebar-title"&gt;
+						&lt;h2 id="developer-sidebar-title" class="sr-only"&gt;${gs.getMessage('Developer Sidebar')}&lt;/h2&gt;
+						&lt;iframe id="javascript_debugger" class="js-debug"/&gt;
+					&lt;/aside&gt;
+				&lt;/j2:if&gt;
+			&lt;/div&gt;
+
+			&lt;j2:if test="$[gs.isLoggedIn()]"&gt;
+				&lt;j2:set var="jvar_should_show_help" value="$[gs.getUser().getPreference('overview_help.visited.ui16') == 'false']"/&gt;
+				&lt;overviewhelp page-name="ui16" active="$[jvar_should_show_help]" embedded="true"/&gt;
+			&lt;/j2:if&gt;
+
+			&lt;!-- script includes at end --&gt;
+			&lt;g:requires output="true" /&gt;
+			&lt;g2:no_escape&gt;
+				&lt;g2:requires output="true" /&gt;
+			&lt;/g2:no_escape&gt;
+
+			&lt;script&gt;
+				jQuery(document).ready(function() {
+					// add these modules to the navpage Angular
+					window.NOW = window.NOW || {};
+					window.NOW.ngLoadModules = window.NOW.ngLoadModules || [];
+					NOW.ngLoadModules.push('Magellan', 'sn.concourse', 'sn.overviewhelp');
+				});
+			&lt;/script&gt;
+			&lt;!-- Add open frame --&gt;
+			&lt;j:if test="${jvar_openframe}"&gt;
+				&lt;g:inline template="openframe.xml" /&gt;
+			&lt;/j:if&gt;
+			&lt;!-- Guided tours --&gt;
+			&lt;j2:if test="$[jvar_embedded_help]"&gt;
+				&lt;g:inline template="guided_tours.xml" /&gt;
+				&lt;g2:evaluate var="jvar_is_embedded_help"&gt;
+					SNC.EmbeddedHelpUtil.isEmbeddedHelpActive();
+				&lt;/g2:evaluate&gt;
+				&lt;script&gt;
+					window.NOW.isEmbeddedHelpActive = $[jvar_is_embedded_help];
+				&lt;/script&gt;
+			&lt;/j2:if&gt;
+			&lt;g:inline template="ng_translations.xml"/&gt;
+			&lt;g2:inline template="concourse_template_preload.xml"/&gt;
+			&lt;g:inline template="concourse_userpreference_preload.xml"/&gt;
+			&lt;g:requires name="scripts/NavpageAngularBootstrap.js"/&gt;
+		&lt;/body&gt;
+	&lt;/html&gt;
+&lt;/j:jelly&gt;]]&gt;&lt;/html&gt;&lt;name&gt;better&lt;/name&gt;&lt;processing_script/&gt;&lt;sys_class_name&gt;sys_ui_page&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2016-09-20 08:42:37&lt;/sys_created_on&gt;&lt;sys_customer_update&gt;false&lt;/sys_customer_update&gt;&lt;sys_id&gt;d8c87f100b4222001e684ac3b6673a3f&lt;/sys_id&gt;&lt;sys_mod_count&gt;35&lt;/sys_mod_count&gt;&lt;sys_name&gt;better&lt;/sys_name&gt;&lt;sys_package display_value="Global" source="global"&gt;global&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_replace_on_upgrade&gt;false&lt;/sys_replace_on_upgrade&gt;&lt;sys_scope display_value="Better UI"&gt;2eb1d2b30b1222001e684ac3b6673a72&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_ui_page_d8c87f100b4222001e684ac3b6673a3f&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2016-10-14 08:42:25&lt;/sys_updated_on&gt;&lt;/sys_ui_page&gt;&lt;/record_update&gt;</payload>
+<remote_update_set display_value="Better UI">c68323080b2222001e684ac3b6673abc</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2016-10-14 09:02:37</sys_created_on>
+<sys_id>4e8323080b2222001e684ac3b6673abd</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2016-10-14 09:02:37</sys_updated_on>
+<table/>
+<target_name>better</target_name>
+<type>UI Page</type>
+<update_domain>global</update_domain>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Better UI">2eb1d2b30b1222001e684ac3b6673a72</application>
+<category>customer</category>
+<comments/>
+<name>sys_ui_macro_cbf873500b4222001e684ac3b6673a93</name>
+<payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sys_ui_macro"&gt;&lt;sys_ui_macro action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;category&gt;general&lt;/category&gt;&lt;description/&gt;&lt;media_type/&gt;&lt;name&gt;better_navigator&lt;/name&gt;&lt;scoped_name/&gt;&lt;sys_class_name&gt;sys_ui_macro&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2016-09-20 08:43:50&lt;/sys_created_on&gt;&lt;sys_customer_update&gt;false&lt;/sys_customer_update&gt;&lt;sys_id&gt;cbf873500b4222001e684ac3b6673a93&lt;/sys_id&gt;&lt;sys_mod_count&gt;237&lt;/sys_mod_count&gt;&lt;sys_name&gt;better_navigator&lt;/sys_name&gt;&lt;sys_package display_value="Global" source="global"&gt;global&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_replace_on_upgrade&gt;false&lt;/sys_replace_on_upgrade&gt;&lt;sys_scope display_value="Better UI"&gt;2eb1d2b30b1222001e684ac3b6673a72&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_ui_macro_cbf873500b4222001e684ac3b6673a93&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2016-10-13 08:49:48&lt;/sys_updated_on&gt;&lt;xml&gt;&lt;![CDATA[&lt;?xml version="1.0" encoding="utf-8" ?&gt;
+&lt;j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null"&gt;
+	&lt;div id="better_nav"&gt;
+		&lt;div id="better_apps_btn" class="navpage-header-content better_nav_btn"&gt;
+			&lt;span class="icon-application-generic"&gt;
+				&lt;span class="sr-only"&gt;Applications&lt;/span&gt;
+			&lt;/span&gt;
+		&lt;/div&gt;
+		&lt;div id="better_app_tree"&gt;
+			&lt;ul id="better_app_list"&gt;
+				&lt;li style="padding-bottom:5px"&gt;
+					&lt;input name="search" id="app_search" type="search" placeholder="search" class="form-control form-control-search"&gt;&lt;/input&gt;
+				&lt;/li&gt;
+			&lt;/ul&gt;
+		&lt;/div&gt;
+		&lt;div id="better_favs_btn" class="navpage-header-content better_nav_btn"&gt;
+			&lt;span class="icon-star"&gt;
+				&lt;span class="sr-only"&gt;Favorites&lt;/span&gt;
+			&lt;/span&gt;
+		&lt;/div&gt;
+		&lt;div id="better_favs"&gt;
+			&lt;ul id="better_favs_list"&gt;
+			&lt;/ul&gt;
+		&lt;/div&gt;
+		&lt;div id="better_hist_btn" class="navpage-header-content better_nav_btn"&gt;
+			&lt;span class="icon-history"&gt;
+				&lt;span class="sr-only"&gt;History&lt;/span&gt;
+			&lt;/span&gt;
+		&lt;/div&gt;
+		&lt;div id="better_hist"&gt;
+			&lt;ul id="better_hist_list"&gt;
+			&lt;/ul&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;!-- reposition sub menus next to their parent menus --&gt;
+	&lt;script&gt;
+		function reposition(elem) {
+			var appNode = $j(elem);
+			var t = appNode.position().top;
+			appNode.find("ul").css("top", t + "px");
+		}
+	&lt;/script&gt;
+	&lt;!-- build applications and modules --&gt;
+	&lt;script&gt;
+		var apps = [];
+		$j.get("http://localhost:8080/api/now/ui/navigator", function( data ) {
+			function sortByTitle(a, b) {
+				if(a.title ${AMP}lt; b.title) return -1;
+				if(a.title ${AMP}gt; b.title) return 1;
+				return 0;
+			}
+
+			function sortByHTMLTitle(a, b) {
+				var titleA = a.find('a').html();
+				var titleB = b.find('a').html();
+
+				if(titleA ${AMP}lt; titleB) return -1;
+				if(titleA ${AMP}gt; titleB) return 1;
+
+				return 0;
+			}
+
+			var result = data.result;
+			result.sort(sortByTitle);
+
+			for (var i in result) {
+				var title = result[i].title;
+				var modules = result[i].modules;
+				var moduleArray = [];
+
+				if (modules) {
+					for (var j = 0; j ${AMP}lt; modules.length; j++) {
+						if (modules[j].modules) {
+							if (modules[j].modules.length &gt; 0) {
+								modules = modules.concat(modules[j].modules);
+							}
+						}
+
+						var moduleTitle = modules[j].title;
+
+						if (modules[j].type !== 'SEPARATOR') {
+							if (moduleTitle) {
+								var l = $j('&lt;li&gt;&lt;/li&gt;').addClass('app_module_node');
+								var s = $j('&lt;span&gt;&lt;/span&gt;');
+								var a = $j('&lt;a&gt;&lt;/a&gt;').addClass('better_nav_link').attr('href', modules[j].uri).attr('target', 'gsft_main');
+								a.html(moduleTitle);
+
+								s.append(a);
+								l.append(s);
+
+								moduleArray.push(l);
+							}
+						}
+					}
+				}
+
+				moduleArray.sort(sortByHTMLTitle);
+
+				if (title) {
+					var l = $j('&lt;li&gt;&lt;/li&gt;').addClass('app_node').attr('onmouseover', 'reposition(this)');
+					var ul = $j('&lt;ul&gt;&lt;/ul&gt;').addClass('better_module_list').append(moduleArray);
+					var s = $j('&lt;span&gt;&lt;/span&gt;').addClass('app_module_node').html(title);
+
+					l.append(s);
+					l.append(ul);
+
+					$j("#better_app_list").append(l);
+				}
+			}
+		});
+
+		$j("#better_app_tree, .icon-application-generic").hover(function(){
+			$j(".icon-application-generic").css("background-color", "#485563");
+		}, function(){
+			$j(".icon-application-generic").css("background-color", "#303A46");
+		});
+	&lt;/script&gt;
+	&lt;!-- build favorites --&gt;
+	&lt;script&gt;
+		$j.get("http://localhost:8080/api/now/ui/favorite", function( data ) {
+			var favs = data.result.list;
+
+			for (var i in favs) {
+				var title = favs[i].title;
+				var url = favs[i].url;
+
+				if (title) {
+					var li = $j('&lt;li&gt;&lt;/li&gt;').addClass('fav_node');
+					var span = $j('&lt;span&gt;&lt;/span&gt;');
+
+					if (url) {
+						var a = $j('&lt;a&gt;&lt;/a&gt;').addClass('better_nav_link');
+						a.attr('href', url);
+						a.attr('target', 'gsft_main');
+						a.html(title);
+						span.append(a);
+						li.append(span);
+					} else {
+						span.html(title);
+						li.append(span);
+					}
+				}
+
+				$j("#better_favs_list").append(li);
+			}
+		});
+
+		$j("#better_favs, .icon-star").hover(function(){
+			$j(".icon-star").css("background-color", "#485563");
+		}, function(){
+			$j(".icon-star").css("background-color", "#303A46");
+		});
+	&lt;/script&gt;
+	&lt;!-- build history --&gt;
+	&lt;script&gt;
+		$j.get("http://localhost:8080/api/now/ui/history", function( data ) {
+			var history = data.result.list;
+
+			for (var i in history) {
+				var title = history[i].title;
+				var url = history[i].url;
+				var description = history[i].description;
+
+				if (title) {
+					var li = $j('&lt;li&gt;&lt;/li&gt;').addClass('hist_node');
+					var span = $j('&lt;span&gt;&lt;/span&gt;');
+
+					if (url) {
+						var a = $j('&lt;a&gt;&lt;/a&gt;').addClass('better_nav_link');
+						a.attr('href', url);
+						a.attr('target', 'gsft_main');
+						a.html(description ? title + " [" + description + "]" : title);
+
+						span.append(a);
+						li.append(span);
+					}
+					else {
+						span.html(title);
+						li.append(span);
+					}
+
+					$j("#better_hist_list").append(function checkDuplicate() {
+						if ($j(this).find('a:contains("' + a.html() + '")').length == 0) {
+							return li;
+						}
+					});
+				}
+			}
+		});
+
+		$j("#better_hist, .icon-history").hover(function(){
+			$j(".icon-history").css("background-color", "#485563");
+		}, function(){
+			$j(".icon-history").css("background-color", "#303A46");
+		});
+	&lt;/script&gt;
+	&lt;!-- filtering logic for app menu --&gt;
+	&lt;script&gt;
+		$j("#app_search").keyup(function (e) {
+			var searchValue = this.value.toLowerCase();
+			var searchInput = $j("#app_search");
+
+			if (searchValue.endsWith('.do')) {
+				$j('#gsft_main').attr('src', searchValue);
+				searchInput.val('');
+				return;
+			}
+
+			if (searchValue.endsWith('.list')) {
+				$j('#gsft_main').attr('src', searchValue.replace('.list', '_list.do'));
+				searchInput.val('');
+				return;
+			}
+			
+			// if search value is empty toggle on all applications and modules
+			if (searchValue == '') {
+				$j('.app_node').each(function toggleAppOn() {
+					var app = $j(this);
+		
+					if (app.css('display') == 'none')
+						app.toggle();
+		
+					// toggle all modules on
+					app.find('li').each(function toggleModulesOn () {
+						var thisModule = $j(this);
+		
+						if (thisModule.css('display') == 'none')
+							thisModule.toggle();
+					});
+				});
+				
+				return;
+			}
+
+			$j('.app_node').each(function searchApps() {
+				var label = this.firstChild.innerHTML.toLowerCase();
+				var li = $j(this);
+
+				// if there is no match for the app label then proceed to check for matches in module labels
+				if (label.indexOf(searchValue) == -1) {
+					var match = false;
+
+					li.find('li').each(function searchModules() {
+						var label = this.getElementsByTagName('a')[0].innerHTML.toLowerCase();
+						var moduleLi = $j(this);
+
+						if (label.indexOf(searchValue) == -1) {
+							if (moduleLi.css('display') != 'none')
+								moduleLi.toggle();
+						} else {
+							if (moduleLi.css('display') == 'none')
+								moduleLi.toggle();
+
+							// flag a match so we know whether to show or hide the app node
+							// for this module
+							match = true;
+						}
+					});
+
+					if (!match) {
+						if (li.css('display') != 'none')
+							li.toggle();
+					}
+				}
+				// if there is a match in the application name dont filter the modules for that application
+				else {
+					if (li.css('display') == 'none')
+						li.toggle();
+				}
+			});
+		});
+	&lt;/script&gt;
+&lt;/j:jelly&gt;
+]]&gt;&lt;/xml&gt;&lt;/sys_ui_macro&gt;&lt;/record_update&gt;</payload>
+<remote_update_set display_value="Better UI">c68323080b2222001e684ac3b6673abc</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2016-10-14 09:02:37</sys_created_on>
+<sys_id>8a8323080b2222001e684ac3b6673abd</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2016-10-14 09:02:37</sys_updated_on>
+<table/>
+<target_name>better_navigator</target_name>
+<type>Macro</type>
+<update_domain>global</update_domain>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Better UI">2eb1d2b30b1222001e684ac3b6673a72</application>
+<category>customer</category>
+<comments/>
+<name>sys_ui_macro_7bd4b6f20b1222001e684ac3b6673a6b</name>
+<payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sys_ui_macro"&gt;&lt;sys_ui_macro action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;category&gt;general&lt;/category&gt;&lt;description/&gt;&lt;media_type/&gt;&lt;name&gt;better_header&lt;/name&gt;&lt;scoped_name/&gt;&lt;sys_class_name&gt;sys_ui_macro&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2016-10-10 08:26:31&lt;/sys_created_on&gt;&lt;sys_customer_update&gt;false&lt;/sys_customer_update&gt;&lt;sys_id&gt;7bd4b6f20b1222001e684ac3b6673a6b&lt;/sys_id&gt;&lt;sys_mod_count&gt;8&lt;/sys_mod_count&gt;&lt;sys_name&gt;better_header&lt;/sys_name&gt;&lt;sys_package display_value="Global" source="global"&gt;global&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_replace_on_upgrade&gt;false&lt;/sys_replace_on_upgrade&gt;&lt;sys_scope display_value="Better UI"&gt;2eb1d2b30b1222001e684ac3b6673a72&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_ui_macro_7bd4b6f20b1222001e684ac3b6673a6b&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2016-10-14 09:00:12&lt;/sys_updated_on&gt;&lt;xml&gt;&lt;![CDATA[&lt;?xml version="1.0" encoding="utf-8" ?&gt;
+&lt;!-- header area --&gt;
+&lt;j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="glide"&gt;
+    &lt;g:evaluate
+        var="jvar_settings_menu_show_application_picker"
+        expression="${  ( !GlideUtil.isExpressInstance() || gs.hasRole('maint') )  &amp;amp;&amp;amp; pm.isActive('com.snc.apps_picker') &amp;amp;&amp;amp; GlideSecurityManager.get().hasRightsTo('ui/environment.current_application/write', null)}"/&gt;
+    &lt;g:evaluate var="jvar_settings_menu_show_language_picker" expression="${pm.isActive('com.glide.i18n') &amp;amp;&amp;amp; gs.getProperty('glide.ui.language_picker.enabled', 'true') == 'true'}"/&gt;
+    &lt;g:evaluate var="jvar_settings_menu_show_update_set_picker"&gt;
+        var canWrite = ( !GlideUtil.isExpressInstance() || gs.hasRole('maint') ) &amp;amp;&amp;amp; GlideSecurityManager.get().hasRightsTo('ui/environment.update_set/write', null) &amp;amp;&amp;amp; gs.getProperty('glide.ui.update_set_picker.enabled', 'true') == 'true';
+        canWrite;
+    &lt;/g:evaluate&gt;
+    &lt;g:evaluate
+        var="jvar_settings_menu_show_domain_reference_picker"
+        expression="${(gs.getProperty('glide.sys.domain.enabled') == 'true' || gs.getProperty('glide.sys.domain.partitioning') == 'true' || gs.getProperty('glide.sys.domain.delegated_administration') == 'true') &amp;amp;&amp;amp; gs.hasRole(gs.getProperty('glide.ui.domain_picker.role', 'itil')) &amp;amp;&amp;amp; gs.getProperty('glide.ui.domain_reference_picker.enabled', 'false') == 'true'}"/&gt;
+    &lt;g:evaluate
+        var="jvar_settings_menu_show_domain_picker"
+        expression="${(gs.getProperty('glide.sys.domain.enabled') == 'true' || gs.getProperty('glide.sys.domain.partitioning') == 'true' || gs.getProperty('glide.sys.domain.delegated_administration') == 'true') &amp;amp;&amp;amp; gs.hasRole(gs.getProperty('glide.ui.domain_picker.role', 'itil')) &amp;amp;&amp;amp; gs.getProperty('glide.ui.domain_reference_picker.enabled', 'false') == 'false'}"/&gt;
+    &lt;g:evaluate var="jvar_settings_menu_show_encryption_picker" expression="${(pm.isActive('com.glide.encryption') &amp;amp;&amp;amp; new SNC.ConcoursePickerGenerator().hasMultipleEncryptionChoices())}"/&gt;
+    &lt;g:evaluate var="jvar_settings_menu_show_developer_tab" expression="${jvar_settings_menu_show_application_picker || jvar_settings_menu_show_update_set_picker}"/&gt;
+    &lt;g2:set_if test="$[gs.getProperty('glide.ui.auto.recovery', 'false') == 'true']" var="jvar_auto_recovery_display" false='none' true='block'/&gt;
+
+    &lt;div id="better_header" class="navbar navbar-default sn-frameset-header"&gt;
+        &lt;div class="container-fluid"&gt;
+            &lt;g:inline template="better_navigator.xml"/&gt;
+            &lt;!-- &lt;j2:if test="$[gs.getPreference('glide.ui.accessibility', 'false') == 'false']"&gt;
+				&lt;enable-accessibility
+					label="${gs.getMessage('Enable accessibility')}"
+					confirm="${gs.getMessage('To enable accessibility, the page must be reloaded')}" /&gt;
+			&lt;/j2:if&gt;
+			&lt;a class="skip-links sr-only sr-only-focusable" href="#gsft_main"&gt;${gs.getMessage('Skip to main content')}&lt;/a&gt;
+			&lt;a class="skip-links sr-only sr-only-focusable" href="#filter"&gt;${gs.getMessage('Skip to navigator')}&lt;/a&gt; --&gt;
+            &lt;div id="better_logo" class="navbar-header" nav-banner-logo=""&gt;
+                &lt;a
+                    class="navbar-brand"
+                    href="${gs.getProperty('glide.banner.image.url', 'home.do')}"
+                    target="${gs.getProperty('glide.banner.image.url_target', 'gsft_main')}"
+                    style="background-image: url('images/logos/logo_service-now_light.png');"
+                    data-sys-properties="glide.product.image.light"&gt;
+                    &lt;img id="mainBannerImage16" src="images/logos/logo_service-now_light.png" style="height: 20px; visibility: hidden;" alt=""/&gt;
+                &lt;/a&gt;
+                &lt;!-- &lt;g:inline template="navpage_logo.xml"/&gt; --&gt;
+            &lt;/div&gt;
+            &lt;div class="collapse navbar-collapse"&gt;
+                &lt;div class="nav navbar-right"&gt;
+
+                    &lt;j2:if test="$[gs.isLoggedIn()]"&gt;
+                        &lt;!-- pickers that can be configured to be visible in the main navpage header --&gt;
+                        &lt;!-- 						&lt;g:inline template="concourse_navpage_pickers.xml" /&gt; --&gt;
+
+                        &lt;!-- user name --&gt;
+                        &lt;div class="navpage-header-content" id="better_avatar"&gt;
+                            &lt;div class="dropdown"&gt;
+                                &lt;span
+                                    class="avatar-container ng-isolate-scope dropdown-toggle"
+                                    ng-class="avatarType()"
+                                    nopopover="true"
+                                    show-presence="true"
+                                    enable-context-menu="false"
+                                    primary="{avatar:'$[gs.getUser().getAvatar()]', initials: '$[gs.getUser().getInitials()]', userID: '$[gs.getUserID()]'}"
+                                    data-toggle="dropdown"
+                                    aria-haspopup="true"&gt;
+                                    &lt;!-- ngIf: users.length &gt; 1 &amp;&amp; !groupAvatar --&gt;
+                                    &lt;div class="avatar soloAvatar bottom"&gt;
+                                        &lt;div class="sub-avatar" ng-style="getBackgroundStyle(users[0])"&gt;
+                                            &lt;!-- ngIf: !users[0].avatar &amp;&amp; !groupAvatar --&gt;
+                                            &lt;span ng-if="!users[0].avatar &amp;amp;&amp;amp; !groupAvatar" class="ng-binding ng-scope"&gt;SA&lt;/span&gt;
+                                            &lt;!-- end ngIf: !users[0].avatar &amp;&amp; !groupAvatar --&gt;
+                                        &lt;/div&gt;
+                                    &lt;/div&gt;
+                                    &lt;!-- ngIf: users.length &gt; 2 &amp;&amp; !groupAvatar --&gt;
+                                    &lt;!-- ngIf: users.length &gt; 3 &amp;&amp; !groupAvatar --&gt;
+                                    &lt;!-- ngIf: ::presenceEnabled --&gt;
+                                    &lt;sn-presence ng-if="::presenceEnabled" user="users[0].userID || users[0].document" class="ng-scope ng-isolate-scope presence presence-online"&gt;&lt;/sn-presence&gt;
+                                    &lt;!-- end ngIf: ::presenceEnabled --&gt;
+                                &lt;/span&gt;
+                                &lt;ul class="dropdown-menu"&gt;
+                                    &lt;li&gt;
+                                        &lt;a href="sys_user.do?sys_id=${gs.getUserID()}${AMP}sysparm_stack=no${AMP}sysparm_view=ess" target="gsft_main"&gt;
+                                            &lt;span class="icon-user"&gt;&lt;/span&gt;Profile&lt;/a&gt;
+                                    &lt;/li&gt;
+                                    &lt;li&gt;
+                                          &lt;a sn-modal-show="impersonate"&gt;
+                                          &lt;span class="glyphicon glyphicon-sunglasses"&gt;&lt;/span&gt;Impersonate&lt;/a&gt;
+                                    &lt;/li&gt;
+                                    &lt;li id="nav-settings-button" onclick="$j('#settings_modal').modal('show')"&gt;
+                                        &lt;a href="#"&gt;
+                                            &lt;span class="icon-configuration"&gt;&lt;/span&gt;Preferences&lt;/a&gt;
+                                    &lt;/li&gt;
+                                    &lt;li onclick="CustomEvent.fire('connect:conversation_list.toggle');"&gt;
+                                        &lt;a href="#"&gt;
+                                            &lt;span class="icon-collaboration"&gt;&lt;/span&gt;Chat&lt;/a&gt;
+                                    &lt;/li&gt;
+                                    &lt;li onclick="CustomEvent.fire('embedded_help:help_pane.toggle');"&gt;
+                                        &lt;a href="#"&gt;
+                                            &lt;span class="icon-help"&gt;&lt;/span&gt;Help&lt;/a&gt;
+                                    &lt;/li&gt;
+                                    &lt;li role="separator" class="divider"&gt;&lt;/li&gt;
+                                    &lt;li&gt;
+                                        &lt;a href="logout.do"&gt;
+                                            &lt;span class="icon-locked"&gt;&lt;/span&gt;Logout&lt;/a&gt;
+                                    &lt;/li&gt;
+                                &lt;/ul&gt;
+                            &lt;/div&gt;
+                            &lt;!-- &lt;g:inline template="concourse_user_menu.xml" /&gt; --&gt;
+                        &lt;/div&gt;
+
+                        &lt;!-- 	&lt;div class="navpage-header-content"&gt;
+							&lt;j:if test="${jvar_openframe}"&gt;
+								&lt;button id="openframe-button" class="btn btn-icon openframe-icon openframe-hidden" onclick="CustomEvent.fireTop('openframe_show');"/&gt;
+							&lt;/j:if&gt;
+						&lt;/div&gt; --&gt;
+
+                        &lt;!-- search --&gt;
+                        &lt;!-- 	&lt;g:evaluate var="jvar_can_search"
+							expression="gs.getProperty('glide.ui.text_search.enable', 'true') == 'true' &amp;amp;&amp;amp; gs.getSession().hasRole( gs.getProperty('glide.ui.can_search'));"/&gt;
+						&lt;j:if test="${jvar_can_search}"&gt;
+							&lt;g2:evaluate var="jvar_show_search_button_check" jelly="true"&gt;
+								if (jelly.jvar_hide_search_button)
+								false;
+							else
+								true;
+						&lt;/g2:evaluate&gt; --&gt;
+                        &lt;!-- 							&lt;j2:if test="${jvar_show_search_button_check}"&gt; --&gt;
+                        &lt;div class="navpage-header-content" id="better_search"&gt;
+                            &lt;form target="gsft_main" role="search" action="textsearch.do" aria-label="${gs.getMessage('Global Search')}" class="form-inline navpage-global-search ng-non-bindable" method="GET"&gt;
+                                &lt;div class="input-group-transparent"&gt;
+                                    &lt;input id="sysparm_search" placeholder="${gs.getMessage('Search')}" class="form-control focus form-control-search" type="search" name="sysparm_search"/&gt;
+                                    &lt;label for="sysparm_search"&gt;&lt;span class="input-group-addon-transparent icon-search sysparm-search-icon"/&gt;&lt;/label&gt;
+                                &lt;/div&gt;
+                            &lt;/form&gt;
+                        &lt;/div&gt;
+                        &lt;!-- 						&lt;/j2:if&gt; --&gt;
+                        &lt;!-- 						&lt;/j:if&gt; --&gt;
+
+                        &lt;!-- toggle button for connect aside --&gt;
+                        &lt;!-- &lt;j2:if test="$[jvar_connect]"&gt;
+							&lt;div class="navpage-header-content"&gt;
+								&lt;connect-conversation-bar-toggle/&gt;
+							&lt;/div&gt;
+						&lt;/j2:if&gt; --&gt;
+
+                        &lt;!-- toggle button for embedded help --&gt;
+                        &lt;!-- 	&lt;j2:if test="$[jvar_embedded_help]"&gt;
+							&lt;div class="navpage-header-content"&gt;
+								&lt;embedded-help-bar-toggle/&gt;
+							&lt;/div&gt;
+						&lt;/j2:if&gt; --&gt;
+
+                        &lt;!-- help pop-over --&gt;
+                        &lt;!-- &lt;j2:if test="$[!jvar_embedded_help]"&gt;
+							&lt;g:inline template="concourse_header_help.xml"/&gt;
+						&lt;/j2:if&gt; --&gt;
+
+                        &lt;!-- cog --&gt;
+                        &lt;!-- &lt;div class="navpage-header-content"&gt;
+							&lt;g:inline template="navpage_settings.xml"/&gt;
+						&lt;/div&gt; --&gt;
+                        &lt;div&gt;
+                            &lt;div id="settings_modal" class="modal settings-modal"&gt;
+                                &lt;div class="modal-dialog modal-lg"&gt;
+                                    &lt;div class="modal-content clearfix"&gt;
+                                        &lt;header class="modal-header"&gt;
+                                            &lt;button data-dismiss="modal" class="btn close icon-cross"&gt;
+                                                &lt;span class="sr-only"&gt;${gs.getMessage('Close')}&lt;/span&gt;
+                                            &lt;/button&gt;
+
+                                            &lt;!-- UI15 switch button --&gt;
+                                            &lt;j2:if test="$[gs.hasRole(gs.getProperty('glide.ui.ui15_switch_roles', 'admin')) ${AND} !GlideUtil.isExpressInstance()]"&gt;
+                                                &lt;a class="btn btn-default btn-sm pull-right" href="?sysparm_userpref_use.concourse=false"&gt;
+                                                    ${gs.getMessage('Switch to UI15')}
+                                                &lt;/a&gt;
+                                            &lt;/j2:if&gt;
+
+                                            &lt;h4 class="modal-title"&gt;${gs.getMessage('System Settings')}&lt;/h4&gt;
+                                        &lt;/header&gt;
+
+                                        &lt;div class="modal-body"&gt;
+                                            &lt;div class="settings-tabs col-sm-3"&gt;
+                                                &lt;ul class="sn-tabs-basic" role="tablist"&gt;
+                                                    &lt;li role="presentation" class="active"&gt;
+                                                        &lt;a href="#settings_general" data-toggle="tabs" class="settings-tab" role="tab" aria-controls="general"&gt;
+                                                            &lt;span class="icon-cog"/&gt;
+                                                            ${gs.getMessage('General')}
+                                                        &lt;/a&gt;
+                                                    &lt;/li&gt;
+                                                    &lt;li role="presentation"&gt;
+                                                        &lt;a href="#settings_theme" data-toggle="tabs" class="settings-tab" role="tab" aria-controls="theme"&gt;
+                                                            &lt;span class="icon-image"/&gt;
+                                                            ${gs.getMessage('Theme')}
+                                                        &lt;/a&gt;
+                                                    &lt;/li&gt;
+                                                    &lt;li role="presentation"&gt;
+                                                        &lt;a href="#settings_table" data-toggle="tabs" class="settings-tab" role="tab" aria-controls="table"&gt;
+                                                            &lt;span class="icon-table"/&gt;
+                                                            ${gs.getMessage('Lists')}
+                                                        &lt;/a&gt;
+                                                    &lt;/li&gt;
+                                                    &lt;li role="presentation"&gt;
+                                                        &lt;a href="#settings_form" data-toggle="tabs" class="settings-tab" role="tab" aria-controls="form"&gt;
+                                                            &lt;span class="icon-form"/&gt;
+                                                            ${gs.getMessage('Forms')}
+                                                        &lt;/a&gt;
+                                                    &lt;/li&gt;
+                                                    &lt;g2:evaluate var="jvar_show_connect_notification_settings"&gt;
+                                                        GlideCollaborationCompatibility.isEitherEnabled();
+                                                    &lt;/g2:evaluate&gt;
+                                                    &lt;j2:if test="${jvar_show_connect_notification_settings}"&gt;
+                                                        &lt;li role="presentation"&gt;
+                                                            &lt;a href="#settings_notifications" data-toggle="tabs" class="settings-tab" role="tab" aria-controls="notifications"&gt;
+                                                                &lt;span class="icon-notification-bell"/&gt;
+                                                                ${gs.getMessage('Notifications')}
+                                                            &lt;/a&gt;
+                                                        &lt;/li&gt;
+                                                    &lt;/j2:if&gt;
+                                                    &lt;j2:if test="${jvar_settings_menu_show_developer_tab}"&gt;
+                                                        &lt;li role="presentation"&gt;
+                                                            &lt;a href="#settings_developer" data-toggle="tabs" class="settings-tab" role="tab" aria-controls="developer"&gt;
+                                                                &lt;span class="icon icon-console"/&gt;
+                                                                ${gs.getMessage('Developer')}
+                                                            &lt;/a&gt;
+                                                        &lt;/li&gt;
+                                                    &lt;/j2:if&gt;
+                                                &lt;/ul&gt;
+                                            &lt;/div&gt;
+                                            &lt;div class="settings-tab-panels tab-content col-sm-9 form-horizontal"&gt;
+                                                &lt;div class="tab-pane active" id="settings_general" role="tabpanel"&gt;
+                                                    &lt;script type="text/ng-template" id="angular.do?sysparm_type=get_partial&amp;amp;name=cc_preference_changer.xml"&gt;
+                                                        &lt;g:inline template="cc_preference_changer.xml"/&gt;
+                                                    &lt;/script&gt;
+                                                    &lt;script type="text/ng-template" id="angular.do?sysparm_type=get_partial&amp;amp;name=concourse_preference_picker.xml"&gt;
+                                                        &lt;g:inline template="concourse_preference_picker.xml"/&gt;
+                                                    &lt;/script&gt;
+                                                    &lt;preference-changer
+                                                        label="${gs.getMessage('Accessibility enabled')}"
+                                                        moreinfo="${gs.getMessage('Improves accessibility when using a keyboard or screen reader')}"
+                                                        preference="glide.ui.accessibility"
+                                                        type="boolean"
+                                                        reload="true"
+                                                        confirm="${gs.getMessage('To change accessibility settings, the page must be reloaded')}"/&gt;
+                                                    &lt;preference-changer label="${gs.getMessage('Compact the user interface')}" moreinfo="${gs.getMessage('Compresses lines to minimize vertical scrolling throughout platform')}" fire-event="compact" preference="glide.ui.compact" type="boolean"/&gt;
+                                                    &lt;preference-changer
+                                                        label="${gs.getMessage('Compact list date/time')}"
+                                                        moreinfo="${gs.getMessage('In lists, displays date and time values in a compact format')}"
+                                                        fire-event="cc_dateformat_compact_set"
+                                                        type="boolean"
+                                                        preference="glide.ui.short_date_format"/&gt;
+                                                    &lt;g:evaluate jelly="true"&gt;
+                                                        var isCanvasActive = GlidePluginManager.isActive('com.glideapp.dashboards') ${AND} gs.getProperty('glide.cms.enable.responsive_grid_layout', true); var paRights = (GlidePluginManager.isActive('com.snc.pa') ${AND} (gs.hasRole('pa_viewer')||
+                                                        gs.hasRole('pa_contributor'))) || isCanvasActive;
+                                                    &lt;/g:evaluate&gt;
+                                                    &lt;j:if test="${paRights}"&gt;
+                                                        &lt;preference-changer
+                                                            label="${gs.getMessage('Home')}"
+                                                            moreinfo="${gs.getMessage('Choose the type of page to set as your Home')}"
+                                                            options="[{value: 'default', label: '${HTML:gs.getMessage('Homepages')}'}, {value: '$pa_dashboard.do', label: '${HTML: gs.getMessage('Dashboards')}'}]"
+                                                            type="choice"
+                                                            preference="my_home_navigation_page"/&gt;
+                                                    &lt;/j:if&gt;
+                                                    &lt;preference-changer
+                                                        label="${gs.getMessage('Date/Time')}"
+                                                        moreinfo="${gs.getMessage('Choose the format in which dates and times are displayed')}"
+                                                        fire-event="cc_dateformat_set"
+                                                        options="[{value: '{shortDate:false,timeAgo:false,dateBoth:false}', label: '${HTML:gs.getMessage('Calendar')}'},{value: '{shortDate:false,timeAgo:true,dateBoth:false}', label: '${HTML:gs.getMessage('Time Ago')}'},{value: '{shortDate:false,timeAgo:false,dateBoth:true}', label: '${HTML:gs.getMessage('Both')}'}]"
+                                                        type="choice"
+                                                        preference="glide.ui.date_format"/&gt;
+                                                    &lt;j:if test="${jvar_settings_menu_show_language_picker}"&gt;
+                                                        &lt;g2:evaluate var="jvar_picker_language_list" expression="new SNC.I18nPickerGenerator().getAvailableLanguages()"/&gt;
+                                                        &lt;g2:evaluate var="jvar_picker_current_language" expression="new SNC.I18nPickerGenerator().getCurrentLanguage()"/&gt;
+                                                        &lt;preference-picker current="${jvar_picker_current_language}" list="${jvar_picker_language_list}" endpoint="language" reload="true" label-title="${gs.getMessage('Language')}" refreshTitle="${gs.getMessage('Refresh language picker')}"/&gt;
+                                                    &lt;/j:if&gt;
+                                                    &lt;j:if test="${gs.hasRole(gs.getProperty('glide.timezone_changer.roles'))}"&gt;
+                                                        &lt;g2:evaluate var="jvar_picker_timezone_list" expression="new SNC.TimezonePickerGenerator().getTimezoneList()"/&gt;
+                                                        &lt;g2:evaluate var="jvar_picker_current_timezone" expression="new SNC.TimezonePickerGenerator().getCurrentTimezone()"/&gt;
+                                                        &lt;preference-picker current="${jvar_picker_current_timezone}" list="${jvar_picker_timezone_list}" endpoint="timezone" reload="false" label-title="${gs.getMessage('Time zone')}" refreshTitle="${gs.getMessage('Refresh time zone picker')}"/&gt;
+                                                    &lt;/j:if&gt;
+                                                    &lt;j2:if test="${jvar_settings_menu_show_domain_picker}"&gt;
+                                                        &lt;g2:evaluate var="jvar_picker_current_domain" expression="new SNC.DomainPickerGenerator().getCurrentDomain()"/&gt;
+                                                        &lt;domain-picker current="${jvar_picker_current_domain}" in-header="" show-in-header="${gs.getPreference('glide.ui.domain_picker.in_header', '')}"/&gt;
+                                                        &lt;script type="text/ng-template" id="angular.do?sysparm_type=get_partial&amp;amp;name=concourse_domain_picker.xml"&gt;
+                                                            &lt;g:inline template="concourse_domain_picker.xml"/&gt;
+                                                        &lt;/script&gt;
+                                                    &lt;/j2:if&gt;
+                                                    &lt;j2:if test="${jvar_settings_menu_show_domain_reference_picker}"&gt;
+                                                        &lt;domain-reference-picker current="${jvar_picker_current_domain}" in-header="" show-in-header="${gs.getPreference('glide.ui.domain_picker.in_header', '')}"/&gt;
+                                                        &lt;script type="text/ng-template" id="angular.do?sysparm_type=get_partial&amp;amp;name=concourse_domain_reference_picker.xml"&gt;
+                                                            &lt;g:inline template="concourse_domain_reference_picker.xml"/&gt;
+                                                        &lt;/script&gt;
+                                                    &lt;/j2:if&gt;
+                                                    &lt;j2:if test="${jvar_settings_menu_show_encryption_picker}"&gt;
+                                                        &lt;g2:evaluate var="jvar_picker_current_encryption" expression="new SNC.ConcoursePickerGenerator().getCurrentEncryptionAsJSON()"/&gt;
+                                                        &lt;encryption-picker current="${jvar_picker_current_encryption}" in-header="" show-in-header="${gs.getPreference('glide.ui.encryption_picker.in_header', '')}"/&gt;
+                                                        &lt;script type="text/ng-template" id="angular.do?sysparm_type=get_partial&amp;amp;name=concourse_encryption_picker.xml"&gt;
+                                                            &lt;g:inline template="concourse_encryption_picker.xml"/&gt;
+                                                        &lt;/script&gt;
+                                                    &lt;/j2:if&gt;
+                                                    &lt;printer-friendly/&gt;
+                                                    &lt;script type="text/ng-template" id="angular.do?sysparm_type=get_partial&amp;amp;name=concourse_print_friendly.xml"&gt;
+                                                        &lt;g:inline template="concourse_print_friendly.xml"/&gt;
+                                                    &lt;/script&gt;
+                                                &lt;/div&gt;
+                                                &lt;div class="tab-pane" id="settings_theme" role="tabpanel"&gt;
+                                                    &lt;theme-picker/&gt;
+                                                    &lt;script type="text/ng-template" id="angular.do?sysparm_type=get_partial&amp;amp;name=concourse_theme_picker.xml"&gt;
+                                                        &lt;g:inline template="concourse_theme_picker.xml"/&gt;
+                                                    &lt;/script&gt;
+                                                &lt;/div&gt;
+                                                &lt;div class="tab-pane" id="settings_table" role="tabpanel"&gt;
+                                                    &lt;preference-changer label="${gs.getMessage('Wrap longer text in list columns')}" moreinfo="${gs.getMessage('Breaks text into lines to minimize horizontal scrolling in lists')}" fire-event="table_wrap" preference="table.wrap" type="boolean"/&gt;
+                                                    &lt;!--&lt;preference-changer--&gt;
+                                                    &lt;!--label="${gs.getMessage('Open records in modal window')}"--&gt;
+                                                    &lt;!--moreinfo="${gs.getMessage('Keep the list open in the background and open the record in a popup over the list')}"--&gt;
+                                                    &lt;!--fire-event="toggleListFormModalPreference" preference="glide.ui.listFormModal" type="boolean" /&gt;--&gt;
+                                                    &lt;j:if test="${pm.isActive('com.glide.ui.list_v3_components')}"&gt;
+                                                        &lt;j2:if test="$[gs.getSession().getUser().getPreference('use.list_v3')]"&gt;
+                                                            &lt;preference-changer label="${gs.getMessage('Striped Table Rows')}" preference="glide.ui.list_v3.row_stripes" type="boolean" fire-event="cc_listv3_tablerow_striped"/&gt;
+                                                            &lt;preference-changer label="${gs.getMessage('Modern Cell Styles')}" preference="glide.ui.field_style_circles" type="boolean" fire-event="cc_modern_cell_styles"/&gt;
+                                                        &lt;/j2:if&gt;
+                                                    &lt;/j:if&gt;
+                                                    &lt;!--&lt;preference-changer--&gt;
+                                                    &lt;!--label="${gs.getMessage('Default List Mode')}"--&gt;
+                                                    &lt;!--preference="glide.ui.default_list_mode"--&gt;
+                                                    &lt;!--options="[{value: 'grid', label: '${HTML:gs.getMessage('Grid')}'},{value: 'split', label: '${HTML:gs.getMessage('Split')}'}]"--&gt;
+                                                    &lt;!--type="choice"/&gt;--&gt;
+                                                &lt;/div&gt;
+                                                &lt;div class="tab-pane" id="settings_form" role="tabpanel"&gt;
+                                                    &lt;preference-changer label="${gs.getMessage('Tabbed forms')}" moreinfo="${gs.getMessage('Organize form sections and related lists into tabs')}" preference="tabbed.forms" fire-event="tabbed" type="boolean"/&gt;
+                                                    &lt;preference-changer
+                                                        label="${gs.getMessage('Related list loading')}"
+                                                        preference="glide.ui.related_list_timing"
+                                                        options="[{value: 'default', label: '${HTML:gs.getMessage('With the Form')}'},{value: 'deferred', label: '${HTML:gs.getMessage('After Form Loads')}'},{value: 'ondemand', label: '${HTML:gs.getMessage('On-demand')}'}]"
+                                                        type="choice"/&gt;
+                                                &lt;/div&gt;
+                                                &lt;j2:if test="${jvar_show_connect_notification_settings}"&gt;
+                                                    &lt;div class="tab-pane" id="settings_notifications" role="tabpanel"&gt;
+                                                        &lt;preference-changer
+                                                            label="${gs.getMessage('Connect mobile notifications')}"
+                                                            moreinfo="${gs.getMessage('Enable or disable mobile notifications for Connect messages')}"
+                                                            preference="connect.notifications.mobile"
+                                                            fire-event="connect.notifications.mobile.update"
+                                                            type="boolean"/&gt;
+                                                        &lt;preference-changer
+                                                            label="${gs.getMessage('Connect desktop notifications')}"
+                                                            moreinfo="${gs.getMessage('Enable or disable desktop notifications for Connect messages')}"
+                                                            preference="connect.notifications.desktop"
+                                                            fire-event="connect.notifications.desktop.update"
+                                                            type="boolean"/&gt;
+                                                        &lt;preference-changer
+                                                            label="${gs.getMessage('Connect email notifications')}"
+                                                            moreinfo="${gs.getMessage('Enable or disable email notifications for Connect messages')}"
+                                                            preference="connect.notifications.email"
+                                                            fire-event="connect.notifications.email.update"
+                                                            type="boolean"/&gt;
+                                                        &lt;preference-changer
+                                                            label="${gs.getMessage('Connect audio notifications')}"
+                                                            moreinfo="${gs.getMessage('Enable or disable audio notifications for Connect messages')}"
+                                                            preference="connect.notifications.audio"
+                                                            fire-event="connect.notifications.audio.update"
+                                                            type="boolean"/&gt;
+                                                    &lt;/div&gt;
+                                                &lt;/j2:if&gt;
+                                                &lt;j2:if test="${jvar_settings_menu_show_developer_tab}"&gt;
+                                                    &lt;div class="tab-pane" id="settings_developer" role="tabpanel"&gt;
+                                                        &lt;j:if test="${jvar_settings_menu_show_application_picker}"&gt;
+                                                            &lt;g2:evaluate var="jvar_picker_current_application" expression="new SNC.ConcoursePickerGenerator().getCurrentApplication()"/&gt;
+                                                            &lt;application-picker current="${jvar_picker_current_application}" show-in-header="${gs.getPreference('glide.ui.application_picker.in_header', '')}" in-header=""/&gt;
+                                                            &lt;script type="text/ng-template" id="angular.do?sysparm_type=get_partial&amp;amp;name=concourse_application_picker.xml"&gt;
+                                                                &lt;g:inline template="concourse_application_picker.xml"/&gt;
+                                                            &lt;/script&gt;
+                                                        &lt;/j:if&gt;
+                                                        &lt;j:if test="${jvar_settings_menu_show_update_set_picker}"&gt;
+                                                            &lt;g2:evaluate var="jvar_picker_current_update_set" expression="new SNC.ConcoursePickerGenerator().getCurrentUpdateSet()"/&gt;
+                                                            &lt;update-set-picker current="${jvar_picker_current_update_set}" show-in-header="${gs.getPreference('glide.ui.update_set_picker.in_header', '')}"/&gt;
+                                                            &lt;script type="text/ng-template" id="angular.do?sysparm_type=get_partial&amp;amp;name=concourse_update_set_picker.xml"&gt;
+                                                                &lt;g:inline template="concourse_update_set_picker.xml"/&gt;
+                                                            &lt;/script&gt;
+                                                        &lt;/j:if&gt;
+                                                        &lt;javascript-debugger label="${gs.getMessage('JavaScript log and field watcher')}" moreinfo="${gs.getMessage('Allows debugging of custom instance code')}" type="boolean"/&gt;
+                                                    &lt;/div&gt;
+                                                &lt;/j2:if&gt;
+                                            &lt;/div&gt;
+                                        &lt;/div&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;!-- modal displayed when impersonating another user --&gt;
+                        &lt;j2:if test="$[new GlideImpersonate().canImpersonate(gs.getUserID())]"&gt;
+							&lt;g:inline template="concourse_impersonate_modal.xml" /&gt;
+						&lt;/j2:if&gt;
+
+						&lt;!-- &lt;g:inline template="concourse_elevate_roles_modal.xml" /&gt;
+
+						&lt;g:inline template="concourse_header_help_popover.xml" /&gt; --&gt;
+                    &lt;/j2:if&gt;
+
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;!-- &lt;g2:evaluate var="jvar_show_request_manager_check" jelly="true"&gt;
+		if (jelly.jvar_hide_request_manager)
+			false;
+		else
+			true;
+	&lt;/g2:evaluate&gt;
+	&lt;j2:if test="${jvar_show_request_manager_check}"&gt;
+		&lt;j2:if test="${gs.getProperty('com.glide.request_manager.active') == 'true'}"&gt;
+			&lt;request-manager timer-delay="${gs.getProperty('glide.ui.transaction.long_response.time')}" class="request-manager-container"/&gt;
+		&lt;/j2:if&gt;
+	&lt;/j2:if&gt; --&gt;
+&lt;/j:jelly&gt;
+]]&gt;&lt;/xml&gt;&lt;/sys_ui_macro&gt;&lt;/record_update&gt;</payload>
+<remote_update_set display_value="Better UI">c68323080b2222001e684ac3b6673abc</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2016-10-14 09:02:37</sys_created_on>
+<sys_id>c68323080b2222001e684ac3b6673abd</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2016-10-14 09:02:37</sys_updated_on>
+<table/>
+<target_name>better_header</target_name>
+<type>Macro</type>
+<update_domain>global</update_domain>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+</unload>

@@ -1,0 +1,437 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<unload unload_date="2016-10-14 08:12:31">
+<sys_ui_macro action="INSERT_OR_UPDATE">
+<active>true</active>
+<category>general</category>
+<description/>
+<media_type/>
+<name>better_header</name>
+<scoped_name/>
+<sys_class_name>sys_ui_macro</sys_class_name>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2016-10-10 08:26:31</sys_created_on>
+<sys_customer_update>false</sys_customer_update>
+<sys_id>7bd4b6f20b1222001e684ac3b6673a6b</sys_id>
+<sys_mod_count>4</sys_mod_count>
+<sys_name>better_header</sys_name>
+<sys_package display_value="Global">global</sys_package>
+<sys_policy/>
+<sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+<sys_scope display_value="Better UI">2eb1d2b30b1222001e684ac3b6673a72</sys_scope>
+<sys_update_name>sys_ui_macro_7bd4b6f20b1222001e684ac3b6673a6b</sys_update_name>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2016-10-14 08:11:21</sys_updated_on>
+<xml><![CDATA[<?xml version="1.0" encoding="utf-8" ?>
+<!-- header area -->
+<j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="glide">
+    <g:evaluate
+        var="jvar_settings_menu_show_application_picker"
+        expression="${  ( !GlideUtil.isExpressInstance() || gs.hasRole('maint') )  &amp;&amp; pm.isActive('com.snc.apps_picker') &amp;&amp; GlideSecurityManager.get().hasRightsTo('ui/environment.current_application/write', null)}"/>
+    <g:evaluate var="jvar_settings_menu_show_language_picker" expression="${pm.isActive('com.glide.i18n') &amp;&amp; gs.getProperty('glide.ui.language_picker.enabled', 'true') == 'true'}"/>
+    <g:evaluate var="jvar_settings_menu_show_update_set_picker">
+        var canWrite = ( !GlideUtil.isExpressInstance() || gs.hasRole('maint') ) &amp;&amp; GlideSecurityManager.get().hasRightsTo('ui/environment.update_set/write', null) &amp;&amp; gs.getProperty('glide.ui.update_set_picker.enabled', 'true') == 'true';
+        canWrite;
+    </g:evaluate>
+    <g:evaluate
+        var="jvar_settings_menu_show_domain_reference_picker"
+        expression="${(gs.getProperty('glide.sys.domain.enabled') == 'true' || gs.getProperty('glide.sys.domain.partitioning') == 'true' || gs.getProperty('glide.sys.domain.delegated_administration') == 'true') &amp;&amp; gs.hasRole(gs.getProperty('glide.ui.domain_picker.role', 'itil')) &amp;&amp; gs.getProperty('glide.ui.domain_reference_picker.enabled', 'false') == 'true'}"/>
+    <g:evaluate
+        var="jvar_settings_menu_show_domain_picker"
+        expression="${(gs.getProperty('glide.sys.domain.enabled') == 'true' || gs.getProperty('glide.sys.domain.partitioning') == 'true' || gs.getProperty('glide.sys.domain.delegated_administration') == 'true') &amp;&amp; gs.hasRole(gs.getProperty('glide.ui.domain_picker.role', 'itil')) &amp;&amp; gs.getProperty('glide.ui.domain_reference_picker.enabled', 'false') == 'false'}"/>
+    <g:evaluate var="jvar_settings_menu_show_encryption_picker" expression="${(pm.isActive('com.glide.encryption') &amp;&amp; new SNC.ConcoursePickerGenerator().hasMultipleEncryptionChoices())}"/>
+    <g:evaluate var="jvar_settings_menu_show_developer_tab" expression="${jvar_settings_menu_show_application_picker || jvar_settings_menu_show_update_set_picker}"/>
+    <g2:set_if test="$[gs.getProperty('glide.ui.auto.recovery', 'false') == 'true']" var="jvar_auto_recovery_display" false='none' true='block'/>
+
+    <div id="better_header" class="navbar navbar-default sn-frameset-header">
+        <div class="container-fluid">
+            <g:inline template="better_navigator.xml"/>
+            <!-- <j2:if test="$[gs.getPreference('glide.ui.accessibility', 'false') == 'false']">
+				<enable-accessibility
+					label="${gs.getMessage('Enable accessibility')}"
+					confirm="${gs.getMessage('To enable accessibility, the page must be reloaded')}" />
+			</j2:if>
+			<a class="skip-links sr-only sr-only-focusable" href="#gsft_main">${gs.getMessage('Skip to main content')}</a>
+			<a class="skip-links sr-only sr-only-focusable" href="#filter">${gs.getMessage('Skip to navigator')}</a> -->
+            <div id="better_logo" class="navbar-header" nav-banner-logo="">
+                <a
+                    class="navbar-brand"
+                    href="${gs.getProperty('glide.banner.image.url', 'home.do')}"
+                    target="${gs.getProperty('glide.banner.image.url_target', 'gsft_main')}"
+                    style="background-image: url('images/logos/logo_service-now_light.png');"
+                    data-sys-properties="glide.product.image.light">
+                    <img id="mainBannerImage16" src="images/logos/logo_service-now_light.png" style="height: 20px; visibility: hidden;" alt=""/>
+                </a>
+                <!-- <g:inline template="navpage_logo.xml"/> -->
+            </div>
+            <div class="collapse navbar-collapse">
+                <div class="nav navbar-right">
+
+                    <j2:if test="$[gs.isLoggedIn()]">
+                        <!-- pickers that can be configured to be visible in the main navpage header -->
+                        <!-- 						<g:inline template="concourse_navpage_pickers.xml" /> -->
+
+                        <!-- user name -->
+                        <div class="navpage-header-content" id="better_avatar">
+                            <div class="dropdown">
+                                <span
+                                    class="avatar-container ng-isolate-scope dropdown-toggle"
+                                    ng-class="avatarType()"
+                                    nopopover="true"
+                                    show-presence="true"
+                                    enable-context-menu="false"
+                                    primary="{avatar:'$[gs.getUser().getAvatar()]', initials: '$[gs.getUser().getInitials()]', userID: '$[gs.getUserID()]'}"
+                                    data-toggle="dropdown"
+                                    aria-haspopup="true">
+                                    <!-- ngIf: users.length > 1 && !groupAvatar -->
+                                    <div class="avatar soloAvatar bottom">
+                                        <div class="sub-avatar" ng-style="getBackgroundStyle(users[0])">
+                                            <!-- ngIf: !users[0].avatar && !groupAvatar -->
+                                            <span ng-if="!users[0].avatar &amp;&amp; !groupAvatar" class="ng-binding ng-scope">SA</span>
+                                            <!-- end ngIf: !users[0].avatar && !groupAvatar -->
+                                        </div>
+                                    </div>
+                                    <!-- ngIf: users.length > 2 && !groupAvatar -->
+                                    <!-- ngIf: users.length > 3 && !groupAvatar -->
+                                    <!-- ngIf: ::presenceEnabled -->
+                                    <sn-presence ng-if="::presenceEnabled" user="users[0].userID || users[0].document" class="ng-scope ng-isolate-scope presence presence-online"></sn-presence>
+                                    <!-- end ngIf: ::presenceEnabled -->
+                                </span>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a href="sys_user.do?sys_id=${gs.getUserID()}${AMP}sysparm_stack=no${AMP}sysparm_view=ess" target="gsft_main">
+                                            <span class="icon-user"></span>Profile</a>
+                                    </li>
+                                    <li>
+                                          <a sn-modal-show="impersonate">
+                                          <span class="glyphicon glyphicon-sunglasses"></span>Impersonate</a>
+                                    </li>
+                                    <li onclick="$j('#settings_modal').modal('show')">
+                                        <a href="#">
+                                            <span class="icon-configuration"></span>Preferences</a>
+                                    </li>
+                                    <li onclick="CustomEvent.fire('connect:conversation_list.toggle');">
+                                        <a href="#">
+                                            <span class="icon-collaboration"></span>Chat</a>
+                                    </li>
+                                    <li onclick="CustomEvent.fire('embedded_help:help_pane.toggle');">
+                                        <a href="#">
+                                            <span class="icon-help"></span>Help</a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+                                    <li>
+                                        <a href="logout.do">
+                                            <span class="icon-locked"></span>Logout</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- <g:inline template="concourse_user_menu.xml" /> -->
+                        </div>
+
+                        <!-- 	<div class="navpage-header-content">
+							<j:if test="${jvar_openframe}">
+								<button id="openframe-button" class="btn btn-icon openframe-icon openframe-hidden" onclick="CustomEvent.fireTop('openframe_show');"/>
+							</j:if>
+						</div> -->
+
+                        <!-- search -->
+                        <!-- 	<g:evaluate var="jvar_can_search"
+							expression="gs.getProperty('glide.ui.text_search.enable', 'true') == 'true' &amp;&amp; gs.getSession().hasRole( gs.getProperty('glide.ui.can_search'));"/>
+						<j:if test="${jvar_can_search}">
+							<g2:evaluate var="jvar_show_search_button_check" jelly="true">
+								if (jelly.jvar_hide_search_button)
+								false;
+							else
+								true;
+						</g2:evaluate> -->
+                        <!-- 							<j2:if test="${jvar_show_search_button_check}"> -->
+                        <div class="navpage-header-content" id="better_search">
+                            <form target="gsft_main" role="search" action="textsearch.do" aria-label="${gs.getMessage('Global Search')}" class="form-inline navpage-global-search ng-non-bindable" method="GET">
+                                <div class="input-group-transparent">
+                                    <input id="sysparm_search" placeholder="${gs.getMessage('Search')}" class="form-control focus form-control-search" type="search" name="sysparm_search"/>
+                                    <label for="sysparm_search"><span class="input-group-addon-transparent icon-search sysparm-search-icon"/></label>
+                                </div>
+                            </form>
+                        </div>
+                        <!-- 						</j2:if> -->
+                        <!-- 						</j:if> -->
+
+                        <!-- toggle button for connect aside -->
+                        <!-- <j2:if test="$[jvar_connect]">
+							<div class="navpage-header-content">
+								<connect-conversation-bar-toggle/>
+							</div>
+						</j2:if> -->
+
+                        <!-- toggle button for embedded help -->
+                        <!-- 	<j2:if test="$[jvar_embedded_help]">
+							<div class="navpage-header-content">
+								<embedded-help-bar-toggle/>
+							</div>
+						</j2:if> -->
+
+                        <!-- help pop-over -->
+                        <!-- <j2:if test="$[!jvar_embedded_help]">
+							<g:inline template="concourse_header_help.xml"/>
+						</j2:if> -->
+
+                        <!-- cog -->
+                        <!-- <div class="navpage-header-content">
+							<g:inline template="navpage_settings.xml"/>
+						</div> -->
+                        <div>
+                            <div id="settings_modal" class="modal settings-modal">
+                                <div class="modal-dialog modal-lg">
+                                    <div class="modal-content clearfix">
+                                        <header class="modal-header">
+                                            <button data-dismiss="modal" class="btn close icon-cross">
+                                                <span class="sr-only">${gs.getMessage('Close')}</span>
+                                            </button>
+
+                                            <!-- UI15 switch button -->
+                                            <j2:if test="$[gs.hasRole(gs.getProperty('glide.ui.ui15_switch_roles', 'admin')) ${AND} !GlideUtil.isExpressInstance()]">
+                                                <a class="btn btn-default btn-sm pull-right" href="?sysparm_userpref_use.concourse=false">
+                                                    ${gs.getMessage('Switch to UI15')}
+                                                </a>
+                                            </j2:if>
+
+                                            <h4 class="modal-title">${gs.getMessage('System Settings')}</h4>
+                                        </header>
+
+                                        <div class="modal-body">
+                                            <div class="settings-tabs col-sm-3">
+                                                <ul class="sn-tabs-basic" role="tablist">
+                                                    <li role="presentation" class="active">
+                                                        <a href="#settings_general" data-toggle="tabs" class="settings-tab" role="tab" aria-controls="general">
+                                                            <span class="icon-cog"/>
+                                                            ${gs.getMessage('General')}
+                                                        </a>
+                                                    </li>
+                                                    <li role="presentation">
+                                                        <a href="#settings_theme" data-toggle="tabs" class="settings-tab" role="tab" aria-controls="theme">
+                                                            <span class="icon-image"/>
+                                                            ${gs.getMessage('Theme')}
+                                                        </a>
+                                                    </li>
+                                                    <li role="presentation">
+                                                        <a href="#settings_table" data-toggle="tabs" class="settings-tab" role="tab" aria-controls="table">
+                                                            <span class="icon-table"/>
+                                                            ${gs.getMessage('Lists')}
+                                                        </a>
+                                                    </li>
+                                                    <li role="presentation">
+                                                        <a href="#settings_form" data-toggle="tabs" class="settings-tab" role="tab" aria-controls="form">
+                                                            <span class="icon-form"/>
+                                                            ${gs.getMessage('Forms')}
+                                                        </a>
+                                                    </li>
+                                                    <g2:evaluate var="jvar_show_connect_notification_settings">
+                                                        GlideCollaborationCompatibility.isEitherEnabled();
+                                                    </g2:evaluate>
+                                                    <j2:if test="${jvar_show_connect_notification_settings}">
+                                                        <li role="presentation">
+                                                            <a href="#settings_notifications" data-toggle="tabs" class="settings-tab" role="tab" aria-controls="notifications">
+                                                                <span class="icon-notification-bell"/>
+                                                                ${gs.getMessage('Notifications')}
+                                                            </a>
+                                                        </li>
+                                                    </j2:if>
+                                                    <j2:if test="${jvar_settings_menu_show_developer_tab}">
+                                                        <li role="presentation">
+                                                            <a href="#settings_developer" data-toggle="tabs" class="settings-tab" role="tab" aria-controls="developer">
+                                                                <span class="icon icon-console"/>
+                                                                ${gs.getMessage('Developer')}
+                                                            </a>
+                                                        </li>
+                                                    </j2:if>
+                                                </ul>
+                                            </div>
+                                            <div class="settings-tab-panels tab-content col-sm-9 form-horizontal">
+                                                <div class="tab-pane active" id="settings_general" role="tabpanel">
+                                                    <script type="text/ng-template" id="angular.do?sysparm_type=get_partial&amp;name=cc_preference_changer.xml">
+                                                        <g:inline template="cc_preference_changer.xml"/>
+                                                    </script>
+                                                    <script type="text/ng-template" id="angular.do?sysparm_type=get_partial&amp;name=concourse_preference_picker.xml">
+                                                        <g:inline template="concourse_preference_picker.xml"/>
+                                                    </script>
+                                                    <preference-changer
+                                                        label="${gs.getMessage('Accessibility enabled')}"
+                                                        moreinfo="${gs.getMessage('Improves accessibility when using a keyboard or screen reader')}"
+                                                        preference="glide.ui.accessibility"
+                                                        type="boolean"
+                                                        reload="true"
+                                                        confirm="${gs.getMessage('To change accessibility settings, the page must be reloaded')}"/>
+                                                    <preference-changer label="${gs.getMessage('Compact the user interface')}" moreinfo="${gs.getMessage('Compresses lines to minimize vertical scrolling throughout platform')}" fire-event="compact" preference="glide.ui.compact" type="boolean"/>
+                                                    <preference-changer
+                                                        label="${gs.getMessage('Compact list date/time')}"
+                                                        moreinfo="${gs.getMessage('In lists, displays date and time values in a compact format')}"
+                                                        fire-event="cc_dateformat_compact_set"
+                                                        type="boolean"
+                                                        preference="glide.ui.short_date_format"/>
+                                                    <g:evaluate jelly="true">
+                                                        var isCanvasActive = GlidePluginManager.isActive('com.glideapp.dashboards') ${AND} gs.getProperty('glide.cms.enable.responsive_grid_layout', true); var paRights = (GlidePluginManager.isActive('com.snc.pa') ${AND} (gs.hasRole('pa_viewer')||
+                                                        gs.hasRole('pa_contributor'))) || isCanvasActive;
+                                                    </g:evaluate>
+                                                    <j:if test="${paRights}">
+                                                        <preference-changer
+                                                            label="${gs.getMessage('Home')}"
+                                                            moreinfo="${gs.getMessage('Choose the type of page to set as your Home')}"
+                                                            options="[{value: 'default', label: '${HTML:gs.getMessage('Homepages')}'}, {value: '$pa_dashboard.do', label: '${HTML: gs.getMessage('Dashboards')}'}]"
+                                                            type="choice"
+                                                            preference="my_home_navigation_page"/>
+                                                    </j:if>
+                                                    <preference-changer
+                                                        label="${gs.getMessage('Date/Time')}"
+                                                        moreinfo="${gs.getMessage('Choose the format in which dates and times are displayed')}"
+                                                        fire-event="cc_dateformat_set"
+                                                        options="[{value: '{shortDate:false,timeAgo:false,dateBoth:false}', label: '${HTML:gs.getMessage('Calendar')}'},{value: '{shortDate:false,timeAgo:true,dateBoth:false}', label: '${HTML:gs.getMessage('Time Ago')}'},{value: '{shortDate:false,timeAgo:false,dateBoth:true}', label: '${HTML:gs.getMessage('Both')}'}]"
+                                                        type="choice"
+                                                        preference="glide.ui.date_format"/>
+                                                    <j:if test="${jvar_settings_menu_show_language_picker}">
+                                                        <g2:evaluate var="jvar_picker_language_list" expression="new SNC.I18nPickerGenerator().getAvailableLanguages()"/>
+                                                        <g2:evaluate var="jvar_picker_current_language" expression="new SNC.I18nPickerGenerator().getCurrentLanguage()"/>
+                                                        <preference-picker current="${jvar_picker_current_language}" list="${jvar_picker_language_list}" endpoint="language" reload="true" label-title="${gs.getMessage('Language')}" refreshTitle="${gs.getMessage('Refresh language picker')}"/>
+                                                    </j:if>
+                                                    <j:if test="${gs.hasRole(gs.getProperty('glide.timezone_changer.roles'))}">
+                                                        <g2:evaluate var="jvar_picker_timezone_list" expression="new SNC.TimezonePickerGenerator().getTimezoneList()"/>
+                                                        <g2:evaluate var="jvar_picker_current_timezone" expression="new SNC.TimezonePickerGenerator().getCurrentTimezone()"/>
+                                                        <preference-picker current="${jvar_picker_current_timezone}" list="${jvar_picker_timezone_list}" endpoint="timezone" reload="false" label-title="${gs.getMessage('Time zone')}" refreshTitle="${gs.getMessage('Refresh time zone picker')}"/>
+                                                    </j:if>
+                                                    <j2:if test="${jvar_settings_menu_show_domain_picker}">
+                                                        <g2:evaluate var="jvar_picker_current_domain" expression="new SNC.DomainPickerGenerator().getCurrentDomain()"/>
+                                                        <domain-picker current="${jvar_picker_current_domain}" in-header="" show-in-header="${gs.getPreference('glide.ui.domain_picker.in_header', '')}"/>
+                                                        <script type="text/ng-template" id="angular.do?sysparm_type=get_partial&amp;name=concourse_domain_picker.xml">
+                                                            <g:inline template="concourse_domain_picker.xml"/>
+                                                        </script>
+                                                    </j2:if>
+                                                    <j2:if test="${jvar_settings_menu_show_domain_reference_picker}">
+                                                        <domain-reference-picker current="${jvar_picker_current_domain}" in-header="" show-in-header="${gs.getPreference('glide.ui.domain_picker.in_header', '')}"/>
+                                                        <script type="text/ng-template" id="angular.do?sysparm_type=get_partial&amp;name=concourse_domain_reference_picker.xml">
+                                                            <g:inline template="concourse_domain_reference_picker.xml"/>
+                                                        </script>
+                                                    </j2:if>
+                                                    <j2:if test="${jvar_settings_menu_show_encryption_picker}">
+                                                        <g2:evaluate var="jvar_picker_current_encryption" expression="new SNC.ConcoursePickerGenerator().getCurrentEncryptionAsJSON()"/>
+                                                        <encryption-picker current="${jvar_picker_current_encryption}" in-header="" show-in-header="${gs.getPreference('glide.ui.encryption_picker.in_header', '')}"/>
+                                                        <script type="text/ng-template" id="angular.do?sysparm_type=get_partial&amp;name=concourse_encryption_picker.xml">
+                                                            <g:inline template="concourse_encryption_picker.xml"/>
+                                                        </script>
+                                                    </j2:if>
+                                                    <printer-friendly/>
+                                                    <script type="text/ng-template" id="angular.do?sysparm_type=get_partial&amp;name=concourse_print_friendly.xml">
+                                                        <g:inline template="concourse_print_friendly.xml"/>
+                                                    </script>
+                                                </div>
+                                                <div class="tab-pane" id="settings_theme" role="tabpanel">
+                                                    <theme-picker/>
+                                                    <script type="text/ng-template" id="angular.do?sysparm_type=get_partial&amp;name=concourse_theme_picker.xml">
+                                                        <g:inline template="concourse_theme_picker.xml"/>
+                                                    </script>
+                                                </div>
+                                                <div class="tab-pane" id="settings_table" role="tabpanel">
+                                                    <preference-changer label="${gs.getMessage('Wrap longer text in list columns')}" moreinfo="${gs.getMessage('Breaks text into lines to minimize horizontal scrolling in lists')}" fire-event="table_wrap" preference="table.wrap" type="boolean"/>
+                                                    <!--<preference-changer-->
+                                                    <!--label="${gs.getMessage('Open records in modal window')}"-->
+                                                    <!--moreinfo="${gs.getMessage('Keep the list open in the background and open the record in a popup over the list')}"-->
+                                                    <!--fire-event="toggleListFormModalPreference" preference="glide.ui.listFormModal" type="boolean" />-->
+                                                    <j:if test="${pm.isActive('com.glide.ui.list_v3_components')}">
+                                                        <j2:if test="$[gs.getSession().getUser().getPreference('use.list_v3')]">
+                                                            <preference-changer label="${gs.getMessage('Striped Table Rows')}" preference="glide.ui.list_v3.row_stripes" type="boolean" fire-event="cc_listv3_tablerow_striped"/>
+                                                            <preference-changer label="${gs.getMessage('Modern Cell Styles')}" preference="glide.ui.field_style_circles" type="boolean" fire-event="cc_modern_cell_styles"/>
+                                                        </j2:if>
+                                                    </j:if>
+                                                    <!--<preference-changer-->
+                                                    <!--label="${gs.getMessage('Default List Mode')}"-->
+                                                    <!--preference="glide.ui.default_list_mode"-->
+                                                    <!--options="[{value: 'grid', label: '${HTML:gs.getMessage('Grid')}'},{value: 'split', label: '${HTML:gs.getMessage('Split')}'}]"-->
+                                                    <!--type="choice"/>-->
+                                                </div>
+                                                <div class="tab-pane" id="settings_form" role="tabpanel">
+                                                    <preference-changer label="${gs.getMessage('Tabbed forms')}" moreinfo="${gs.getMessage('Organize form sections and related lists into tabs')}" preference="tabbed.forms" fire-event="tabbed" type="boolean"/>
+                                                    <preference-changer
+                                                        label="${gs.getMessage('Related list loading')}"
+                                                        preference="glide.ui.related_list_timing"
+                                                        options="[{value: 'default', label: '${HTML:gs.getMessage('With the Form')}'},{value: 'deferred', label: '${HTML:gs.getMessage('After Form Loads')}'},{value: 'ondemand', label: '${HTML:gs.getMessage('On-demand')}'}]"
+                                                        type="choice"/>
+                                                </div>
+                                                <j2:if test="${jvar_show_connect_notification_settings}">
+                                                    <div class="tab-pane" id="settings_notifications" role="tabpanel">
+                                                        <preference-changer
+                                                            label="${gs.getMessage('Connect mobile notifications')}"
+                                                            moreinfo="${gs.getMessage('Enable or disable mobile notifications for Connect messages')}"
+                                                            preference="connect.notifications.mobile"
+                                                            fire-event="connect.notifications.mobile.update"
+                                                            type="boolean"/>
+                                                        <preference-changer
+                                                            label="${gs.getMessage('Connect desktop notifications')}"
+                                                            moreinfo="${gs.getMessage('Enable or disable desktop notifications for Connect messages')}"
+                                                            preference="connect.notifications.desktop"
+                                                            fire-event="connect.notifications.desktop.update"
+                                                            type="boolean"/>
+                                                        <preference-changer
+                                                            label="${gs.getMessage('Connect email notifications')}"
+                                                            moreinfo="${gs.getMessage('Enable or disable email notifications for Connect messages')}"
+                                                            preference="connect.notifications.email"
+                                                            fire-event="connect.notifications.email.update"
+                                                            type="boolean"/>
+                                                        <preference-changer
+                                                            label="${gs.getMessage('Connect audio notifications')}"
+                                                            moreinfo="${gs.getMessage('Enable or disable audio notifications for Connect messages')}"
+                                                            preference="connect.notifications.audio"
+                                                            fire-event="connect.notifications.audio.update"
+                                                            type="boolean"/>
+                                                    </div>
+                                                </j2:if>
+                                                <j2:if test="${jvar_settings_menu_show_developer_tab}">
+                                                    <div class="tab-pane" id="settings_developer" role="tabpanel">
+                                                        <j:if test="${jvar_settings_menu_show_application_picker}">
+                                                            <g2:evaluate var="jvar_picker_current_application" expression="new SNC.ConcoursePickerGenerator().getCurrentApplication()"/>
+                                                            <application-picker current="${jvar_picker_current_application}" show-in-header="${gs.getPreference('glide.ui.application_picker.in_header', '')}" in-header=""/>
+                                                            <script type="text/ng-template" id="angular.do?sysparm_type=get_partial&amp;name=concourse_application_picker.xml">
+                                                                <g:inline template="concourse_application_picker.xml"/>
+                                                            </script>
+                                                        </j:if>
+                                                        <j:if test="${jvar_settings_menu_show_update_set_picker}">
+                                                            <g2:evaluate var="jvar_picker_current_update_set" expression="new SNC.ConcoursePickerGenerator().getCurrentUpdateSet()"/>
+                                                            <update-set-picker current="${jvar_picker_current_update_set}" show-in-header="${gs.getPreference('glide.ui.update_set_picker.in_header', '')}"/>
+                                                            <script type="text/ng-template" id="angular.do?sysparm_type=get_partial&amp;name=concourse_update_set_picker.xml">
+                                                                <g:inline template="concourse_update_set_picker.xml"/>
+                                                            </script>
+                                                        </j:if>
+                                                        <javascript-debugger label="${gs.getMessage('JavaScript log and field watcher')}" moreinfo="${gs.getMessage('Allows debugging of custom instance code')}" type="boolean"/>
+                                                    </div>
+                                                </j2:if>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- modal displayed when impersonating another user -->
+                        <j2:if test="$[new GlideImpersonate().canImpersonate(gs.getUserID())]">
+							<g:inline template="concourse_impersonate_modal.xml" />
+						</j2:if>
+
+						<!-- <g:inline template="concourse_elevate_roles_modal.xml" />
+
+						<g:inline template="concourse_header_help_popover.xml" /> -->
+                    </j2:if>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <g2:evaluate var="jvar_show_request_manager_check" jelly="true">
+		if (jelly.jvar_hide_request_manager)
+			false;
+		else
+			true;
+	</g2:evaluate>
+	<j2:if test="${jvar_show_request_manager_check}">
+		<j2:if test="${gs.getProperty('com.glide.request_manager.active') == 'true'}">
+			<request-manager timer-delay="${gs.getProperty('glide.ui.transaction.long_response.time')}" class="request-manager-container"/>
+		</j2:if>
+	</j2:if> -->
+</j:jelly>
+]]></xml>
+</sys_ui_macro>
+</unload>

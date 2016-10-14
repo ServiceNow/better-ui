@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<unload unload_date="2016-10-14 09:00:29">
+<sys_ui_macro action="INSERT_OR_UPDATE">
+<active>true</active>
+<category>general</category>
+<description/>
+<media_type/>
+<name>better_navigator</name>
+<scoped_name/>
+<sys_class_name>sys_ui_macro</sys_class_name>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2016-09-20 08:43:50</sys_created_on>
+<sys_customer_update>false</sys_customer_update>
+<sys_id>cbf873500b4222001e684ac3b6673a93</sys_id>
+<sys_mod_count>237</sys_mod_count>
+<sys_name>better_navigator</sys_name>
+<sys_package display_value="Global">global</sys_package>
+<sys_policy/>
+<sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+<sys_scope display_value="Better UI">2eb1d2b30b1222001e684ac3b6673a72</sys_scope>
+<sys_update_name>sys_ui_macro_cbf873500b4222001e684ac3b6673a93</sys_update_name>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2016-10-13 08:49:48</sys_updated_on>
+<xml><![CDATA[<?xml version="1.0" encoding="utf-8" ?>
+<j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
+	<div id="better_nav">
+		<div id="better_apps_btn" class="navpage-header-content better_nav_btn">
+			<span class="icon-application-generic">
+				<span class="sr-only">Applications</span>
+			</span>
+		</div>
+		<div id="better_app_tree">
+			<ul id="better_app_list">
+				<li style="padding-bottom:5px">
+					<input name="search" id="app_search" type="search" placeholder="search" class="form-control form-control-search"></input>
+				</li>
+			</ul>
+		</div>
+		<div id="better_favs_btn" class="navpage-header-content better_nav_btn">
+			<span class="icon-star">
+				<span class="sr-only">Favorites</span>
+			</span>
+		</div>
+		<div id="better_favs">
+			<ul id="better_favs_list">
+			</ul>
+		</div>
+		<div id="better_hist_btn" class="navpage-header-content better_nav_btn">
+			<span class="icon-history">
+				<span class="sr-only">History</span>
+			</span>
+		</div>
+		<div id="better_hist">
+			<ul id="better_hist_list">
+			</ul>
+		</div>
+	</div>
+	<!-- reposition sub menus next to their parent menus -->
+	<script>
+		function reposition(elem) {
+			var appNode = $j(elem);
+			var t = appNode.position().top;
+			appNode.find("ul").css("top", t + "px");
+		}
+	</script>
+	<!-- build applications and modules -->
+	<script>
+		var apps = [];
+		$j.get("http://localhost:8080/api/now/ui/navigator", function( data ) {
+			function sortByTitle(a, b) {
+				if(a.title ${AMP}lt; b.title) return -1;
+				if(a.title ${AMP}gt; b.title) return 1;
+				return 0;
+			}
+
+			function sortByHTMLTitle(a, b) {
+				var titleA = a.find('a').html();
+				var titleB = b.find('a').html();
+
+				if(titleA ${AMP}lt; titleB) return -1;
+				if(titleA ${AMP}gt; titleB) return 1;
+
+				return 0;
+			}
+
+			var result = data.result;
+			result.sort(sortByTitle);
+
+			for (var i in result) {
+				var title = result[i].title;
+				var modules = result[i].modules;
+				var moduleArray = [];
+
+				if (modules) {
+					for (var j = 0; j ${AMP}lt; modules.length; j++) {
+						if (modules[j].modules) {
+							if (modules[j].modules.length > 0) {
+								modules = modules.concat(modules[j].modules);
+							}
+						}
+
+						var moduleTitle = modules[j].title;
+
+						if (modules[j].type !== 'SEPARATOR') {
+							if (moduleTitle) {
+								var l = $j('<li></li>').addClass('app_module_node');
+								var s = $j('<span></span>');
+								var a = $j('<a></a>').addClass('better_nav_link').attr('href', modules[j].uri).attr('target', 'gsft_main');
+								a.html(moduleTitle);
+
+								s.append(a);
+								l.append(s);
+
+								moduleArray.push(l);
+							}
+						}
+					}
+				}
+
+				moduleArray.sort(sortByHTMLTitle);
+
+				if (title) {
+					var l = $j('<li></li>').addClass('app_node').attr('onmouseover', 'reposition(this)');
+					var ul = $j('<ul></ul>').addClass('better_module_list').append(moduleArray);
+					var s = $j('<span></span>').addClass('app_module_node').html(title);
+
+					l.append(s);
+					l.append(ul);
+
+					$j("#better_app_list").append(l);
+				}
+			}
+		});
+
+		$j("#better_app_tree, .icon-application-generic").hover(function(){
+			$j(".icon-application-generic").css("background-color", "#485563");
+		}, function(){
+			$j(".icon-application-generic").css("background-color", "#303A46");
+		});
+	</script>
+	<!-- build favorites -->
+	<script>
+		$j.get("http://localhost:8080/api/now/ui/favorite", function( data ) {
+			var favs = data.result.list;
+
+			for (var i in favs) {
+				var title = favs[i].title;
+				var url = favs[i].url;
+
+				if (title) {
+					var li = $j('<li></li>').addClass('fav_node');
+					var span = $j('<span></span>');
+
+					if (url) {
+						var a = $j('<a></a>').addClass('better_nav_link');
+						a.attr('href', url);
+						a.attr('target', 'gsft_main');
+						a.html(title);
+						span.append(a);
+						li.append(span);
+					} else {
+						span.html(title);
+						li.append(span);
+					}
+				}
+
+				$j("#better_favs_list").append(li);
+			}
+		});
+
+		$j("#better_favs, .icon-star").hover(function(){
+			$j(".icon-star").css("background-color", "#485563");
+		}, function(){
+			$j(".icon-star").css("background-color", "#303A46");
+		});
+	</script>
+	<!-- build history -->
+	<script>
+		$j.get("http://localhost:8080/api/now/ui/history", function( data ) {
+			var history = data.result.list;
+
+			for (var i in history) {
+				var title = history[i].title;
+				var url = history[i].url;
+				var description = history[i].description;
+
+				if (title) {
+					var li = $j('<li></li>').addClass('hist_node');
+					var span = $j('<span></span>');
+
+					if (url) {
+						var a = $j('<a></a>').addClass('better_nav_link');
+						a.attr('href', url);
+						a.attr('target', 'gsft_main');
+						a.html(description ? title + " [" + description + "]" : title);
+
+						span.append(a);
+						li.append(span);
+					}
+					else {
+						span.html(title);
+						li.append(span);
+					}
+
+					$j("#better_hist_list").append(function checkDuplicate() {
+						if ($j(this).find('a:contains("' + a.html() + '")').length == 0) {
+							return li;
+						}
+					});
+				}
+			}
+		});
+
+		$j("#better_hist, .icon-history").hover(function(){
+			$j(".icon-history").css("background-color", "#485563");
+		}, function(){
+			$j(".icon-history").css("background-color", "#303A46");
+		});
+	</script>
+	<!-- filtering logic for app menu -->
+	<script>
+		$j("#app_search").keyup(function (e) {
+			var searchValue = this.value.toLowerCase();
+			var searchInput = $j("#app_search");
+
+			if (searchValue.endsWith('.do')) {
+				$j('#gsft_main').attr('src', searchValue);
+				searchInput.val('');
+				return;
+			}
+
+			if (searchValue.endsWith('.list')) {
+				$j('#gsft_main').attr('src', searchValue.replace('.list', '_list.do'));
+				searchInput.val('');
+				return;
+			}
+			
+			// if search value is empty toggle on all applications and modules
+			if (searchValue == '') {
+				$j('.app_node').each(function toggleAppOn() {
+					var app = $j(this);
+		
+					if (app.css('display') == 'none')
+						app.toggle();
+		
+					// toggle all modules on
+					app.find('li').each(function toggleModulesOn () {
+						var thisModule = $j(this);
+		
+						if (thisModule.css('display') == 'none')
+							thisModule.toggle();
+					});
+				});
+				
+				return;
+			}
+
+			$j('.app_node').each(function searchApps() {
+				var label = this.firstChild.innerHTML.toLowerCase();
+				var li = $j(this);
+
+				// if there is no match for the app label then proceed to check for matches in module labels
+				if (label.indexOf(searchValue) == -1) {
+					var match = false;
+
+					li.find('li').each(function searchModules() {
+						var label = this.getElementsByTagName('a')[0].innerHTML.toLowerCase();
+						var moduleLi = $j(this);
+
+						if (label.indexOf(searchValue) == -1) {
+							if (moduleLi.css('display') != 'none')
+								moduleLi.toggle();
+						} else {
+							if (moduleLi.css('display') == 'none')
+								moduleLi.toggle();
+
+							// flag a match so we know whether to show or hide the app node
+							// for this module
+							match = true;
+						}
+					});
+
+					if (!match) {
+						if (li.css('display') != 'none')
+							li.toggle();
+					}
+				}
+				// if there is a match in the application name dont filter the modules for that application
+				else {
+					if (li.css('display') == 'none')
+						li.toggle();
+				}
+			});
+		});
+	</script>
+</j:jelly>
+]]></xml>
+</sys_ui_macro>
+</unload>
