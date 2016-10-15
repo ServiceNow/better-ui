@@ -1,4 +1,6 @@
-#ServiceNow Better UI
+#ServiceNow Full Width UI
+
+_**This UI is not endorsed or supported by ServiceNow in any way. Use at your own risk.**_
 
 If you work a lot with big forms and lists in ServiceNow then this might be something for you.
 
